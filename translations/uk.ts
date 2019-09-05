@@ -119,15 +119,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutForm</name>
     <message>
-        <source>Restart qTox to install version %1</source>
-        <translation>Перезапустіть qTox для встановлення версіїі %1</translation>
-    </message>
-    <message>
-        <source>qTox is downloading update %1</source>
-        <comment>%1 is the version of the update</comment>
-        <translation>qTox завантажує оновлення %1</translation>
-    </message>
-    <message>
         <source>About</source>
         <translation>Про програму</translation>
     </message>
@@ -195,10 +186,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>status message</source>
         <translation type="unfinished">Статус</translation>
-    </message>
-    <message>
-        <source>Public key:</source>
-        <translation type="unfinished">Відкритий ключ:</translation>
     </message>
     <message>
         <source>Used aliases:</source>
@@ -269,13 +256,29 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Історію видалено</translation>
     </message>
     <message>
-        <source>Chat history with %1 removed!</source>
-        <translation type="unfinished">Історію переписки з %1 видалено!</translation>
-    </message>
-    <message>
         <source>Choose an auto accept directory</source>
         <extracomment>popup title</extracomment>
         <translation type="unfinished">Оберіть теку, для автоматичного отримання файлів</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public key (not ToxID):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation type="unfinished">Підтвердження</translation>
+    </message>
+    <message>
+        <source>Are you sure to remove %1 chat history?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to remove chat history with %1!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -283,10 +286,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Version</source>
         <translation>Версія</translation>
-    </message>
-    <message>
-        <source>Downloading update: %p%</source>
-        <translation>Завантаження оновлень: %p%</translation>
     </message>
     <message>
         <source>License</source>
@@ -299,6 +298,18 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Known Issues</source>
         <translation>Відомі проблеми</translation>
+    </message>
+    <message>
+        <source>Open update download link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>qTox is up to date ✓</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -567,13 +578,13 @@ which may lead to problems with video calls.</source>
         <source>Copy Debug Log</source>
         <translation>Скопіювати логи відладки</translation>
     </message>
+    <message>
+        <source>Enable LAN discovery</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>
-    <message>
-        <source>Load chat history...</source>
-        <translation>Завантажити історію чату...</translation>
-    </message>
     <message>
         <source>Send a file</source>
         <translation>Надіслати файл</translation>
@@ -597,10 +608,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Calling %1</source>
         <translation>Дзінок до %1</translation>
-    </message>
-    <message>
-        <source>Failed to send file &quot;%1&quot;</source>
-        <translation>Не вдалось відправити файл &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Failed to open temporary file</source>
@@ -632,40 +639,21 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>away</source>
-        <comment>contact status</comment>
-        <translation type="unfinished">Відійшов</translation>
-    </message>
-    <message>
-        <source>busy</source>
-        <comment>contact status</comment>
-        <translation type="unfinished">Зайнятий</translation>
-    </message>
-    <message>
-        <source>offline</source>
-        <comment>contact status</comment>
-        <translation type="unfinished">Поза мережею</translation>
-    </message>
-    <message>
-        <source>online</source>
-        <comment>contact status</comment>
-        <translation type="unfinished">В мережі</translation>
-    </message>
-    <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
         <translation type="unfinished">%1 тепер вже відомий як %2</translation>
     </message>
     <message>
-        <source>Export to file</source>
+        <source>Call with %1 ended unexpectedly. %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Save chat log</source>
-        <translation type="unfinished">Зберегти чат</translation>
+        <source>Filename contained illegal characters</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Call with %1 ended unexpectedly. %2</source>
+        <source>Illegal characters have been changed to _ 
+so you can save the file on windows.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -778,10 +766,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>Core</name>
     <message>
-        <source>Toxing on qTox</source>
-        <translation>Вітання з qTox</translation>
-    </message>
-    <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translation>/me пропонує дружбу, &quot;%1&quot;</translation>
     </message>
@@ -804,6 +788,33 @@ which may lead to problems with video calls.</source>
         <source>Friend is already added</source>
         <comment>Error while sending friendship request</comment>
         <translation type="unfinished">Друга вже додано</translation>
+    </message>
+    <message>
+        <source>Groupchat %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DesktopNotify</name>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Нове повідомлення</translation>
+    </message>
+    <message>
+        <source>Incoming file transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Friend request received</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New group message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -886,6 +897,11 @@ which may lead to problems with video calls.</source>
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
         <translation>Зберегти файл</translation>
+    </message>
+    <message>
+        <source>Remote Paused</source>
+        <comment>file transfer widget</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1046,21 +1062,6 @@ which may lead to problems with video calls.</source>
     </message>
 </context>
 <context>
-    <name>GUI</name>
-    <message>
-        <source>Enter your password</source>
-        <translation>Введіть ваш пароль</translation>
-    </message>
-    <message>
-        <source>Decrypt</source>
-        <translation>Розшифрувати</translation>
-    </message>
-    <message>
-        <source>You must enter a non-empty password:</source>
-        <translation>Введіть непустий пароль:</translation>
-    </message>
-</context>
-<context>
     <name>GeneralForm</name>
     <message>
         <source>General</source>
@@ -1129,10 +1130,6 @@ instead of system taskbar.</source>
         <translation>Автозапуск</translation>
     </message>
     <message>
-        <source>Check for updates on startup</source>
-        <translation>Перевіряти оновлення під час запуску</translation>
-    </message>
-    <message>
         <source>Set where files will be saved.</source>
         <translation>Вкажіть, куди саме зберігати файли.</translation>
     </message>
@@ -1153,20 +1150,12 @@ instead of system taskbar.</source>
         <translation>Показувати зміну статусів контактів</translation>
     </message>
     <message>
-        <source>Play sound</source>
-        <translation>Відтворювати звук</translation>
-    </message>
-    <message>
         <source>Set to 0 to disable</source>
         <translation>Встановіть 0, аби вимкнути</translation>
     </message>
     <message>
         <source>Light icon</source>
         <translation>Світлі піктограми</translation>
-    </message>
-    <message>
-        <source>Faux offline messaging</source>
-        <translation>Фальшивий поза мережевий обмін повідомленнями</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking them.</source>
@@ -1182,12 +1171,20 @@ instead of system taskbar.</source>
         <translation>Мова:</translation>
     </message>
     <message>
-        <source>On new message:</source>
-        <translation>За нового повідомлення:</translation>
+        <source>Check for updates</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Play sound while Busy</source>
-        <translation>Відтворювати звук якщо Зайнятий</translation>
+        <source>Spell checking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max autoaccept file size (0 to disable):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1217,10 +1214,6 @@ instead of system taskbar.</source>
         <translation>Очистити показані повідомлення</translation>
     </message>
     <message>
-        <source>Not sent</source>
-        <translation>Не відправлено</translation>
-    </message>
-    <message>
         <source>Cleared</source>
         <translation>Очищено</translation>
     </message>
@@ -1231,6 +1224,30 @@ instead of system taskbar.</source>
     <message>
         <source>Copy link address</source>
         <translation>Скопіювати адресу посилання</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation type="unfinished">Підтвердження</translation>
+    </message>
+    <message>
+        <source>You are sure that you want to clear all displayed messages?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search in text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Go to current date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load chat history...</source>
+        <translation type="unfinished">Завантажити історію чату...</translation>
+    </message>
+    <message>
+        <source>Export to file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1247,30 +1264,65 @@ instead of system taskbar.</source>
         <source>Hide Messages</source>
         <translation>Приховати повідомлення</translation>
     </message>
-</context>
-<context>
-    <name>Group</name>
     <message>
-        <source>&lt;Empty&gt;</source>
-        <comment>Placeholder when someone&apos;s name in a group chat is empty</comment>
-        <translation>&lt;Пусто&gt;</translation>
+        <source>Full Screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle video preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute microphone</source>
+        <translation type="unfinished">Вимкнути мікрофон</translation>
+    </message>
+    <message>
+        <source>End video call</source>
+        <translation type="unfinished">Завершити відеодзвінок</translation>
+    </message>
+    <message>
+        <source>Exit full screen</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GroupChatForm</name>
     <message>
-        <source>%1 users in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>Користувачів у чаті: %1</translation>
-    </message>
-    <message>
-        <source>1 user in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>1 користувач в чаті</translation>
-    </message>
-    <message>
         <source>%1 has set the title to %2</source>
         <translation type="unfinished">%1 встановив тему %2</translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is now known as %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has left the group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1314,14 +1366,6 @@ instead of system taskbar.</source>
         <translation>Видалити чат з цього вікна</translation>
     </message>
     <message>
-        <source>1 user in chat</source>
-        <translation>1 користувач в чаті</translation>
-    </message>
-    <message>
-        <source>%1 users in chat</source>
-        <translation>Користувачів у чаті: %1</translation>
-    </message>
-    <message>
         <source>Quit group</source>
         <comment>Menu to quit a groupchat</comment>
         <translation>Вийти з групи</translation>
@@ -1329,6 +1373,23 @@ instead of system taskbar.</source>
     <message>
         <source>Set title...</source>
         <translation>Встановити заголовок…</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">В мережі</translation>
     </message>
 </context>
 <context>
@@ -1569,11 +1630,27 @@ Profile does not contain your history.</source>
         <translation>Історія</translation>
     </message>
     <message>
-        <source>Load history from:</source>
-        <translation>Завантажити історію від:</translation>
+        <source>Load history</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 messages</source>
+        <source>from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(about 100 messages are loaded)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Date Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a date</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1648,11 +1725,6 @@ Please make sure to enter same password twice.</source>
         <translation>Профіль з таким іменем уже існує.</translation>
     </message>
     <message>
-        <source>Unknown error: Couldn&apos;t create a new profile.
-If you encountered this error, please report it.</source>
-        <translation>Невідома помилка: Неможливо створити новий профіль. Якщо Ви зустріли цю помилку, будь ласка, повідомте про це.</translation>
-    </message>
-    <message>
         <source>Couldn&apos;t load profile</source>
         <translation>Неможливо завантажити профіль</translation>
     </message>
@@ -1671,10 +1743,6 @@ You may want to create one.</source>
     <message>
         <source>This profile is already in use.</source>
         <translation>Цей профіль вже використовується.</translation>
-    </message>
-    <message>
-        <source>Profile already in use. Close other clients.</source>
-        <translation>Профіль вже використовується. Закрийте інші клієнти.</translation>
     </message>
     <message>
         <source>Wrong password.</source>
@@ -1843,11 +1911,6 @@ You may want to create one.</source>
 <context>
     <name>Nexus</name>
     <message>
-        <source>Images (%1)</source>
-        <comment>filetype filter</comment>
-        <translation>Зображення (%1)</translation>
-    </message>
-    <message>
         <source>View</source>
         <comment>OS X Menu bar</comment>
         <translation>Вигляд</translation>
@@ -1976,6 +2039,10 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Couldn&apos;t change password on the database, it might be corrupted or use the old password.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toxing on qTox</source>
+        <translation type="unfinished">Вітання з qTox</translation>
     </message>
 </context>
 <context>
@@ -2192,6 +2259,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <extracomment>deletion confirmation text</extracomment>
         <translation type="unfinished">Ви дійсно бажаєте видалити Ваш пароль?</translation>
     </message>
+    <message>
+        <source>Images (%1)</source>
+        <comment>filetype filter</comment>
+        <translation type="unfinished">Зображення (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ProfileImporter</name>
@@ -2285,21 +2357,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>QObject</name>
     <message>
-        <source>Version %1, %2</source>
-        <translation>Версія %1, %2</translation>
-    </message>
-    <message>
-        <source>Update</source>
-        <comment>The title of a message box</comment>
-        <translation>Оновити</translation>
-    </message>
-    <message>
-        <source>An update is available, do you want to download it now?
-It will be installed when qTox restarts.</source>
-        <translation>Доступне оновлення, бажаєте завантажити його зараз?
-Оновлення буде встановлено після перезапуску qTox.</translation>
-    </message>
-    <message>
         <source>Tox URI to parse</source>
         <translation>Tox URI для розбору</translation>
     </message>
@@ -2340,7 +2397,7 @@ It will be installed when qTox restarts.</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>That means &quot;Hi, I&apos;m %1! Please, add me to you contact list.
 It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian noun can&apos;t mean a verb (like &quot;call&quot; for noun and verb in English)</translatorcomment>
-        <translation>Привіт, я %1! Додай мене в свій список контактів, будь ласка.</translation>
+        <translation>Привіт, я %1! Додай мене в свій список контактів, будь ласка?</translation>
     </message>
     <message>
         <source>Server doesn&apos;t support Toxme</source>
@@ -2417,6 +2474,55 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
         <source>Starts new instance and opens the login screen.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark blue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark olive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark red</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark violet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to load profile automatically.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>online</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">В мережі</translation>
+    </message>
+    <message>
+        <source>away</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">Відійшов</translation>
+    </message>
+    <message>
+        <source>busy</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">Зайнятий</translation>
+    </message>
+    <message>
+        <source>offline</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">Поза мережею</translation>
+    </message>
+    <message>
+        <source>blocked</source>
+        <comment>contact status</comment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RemoveFriendDialog</name>
@@ -2467,6 +2573,60 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translation type="unfinished">Enter</translation>
+    </message>
+</context>
+<context>
+    <name>SearchForm</name>
+    <message>
+        <source>The text could not be found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SearchSettingsForm</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start search:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from the end</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from the beginning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>after date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>before date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>00.00.0000</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whole words only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use regular expressions</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2616,26 +2776,8 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
         <translation type="unfinished">Відкрити вікно</translation>
     </message>
     <message>
-        <source>Focus qTox when you receive message.</source>
-        <comment>toolTip for Focus window setting</comment>
-        <translation type="unfinished">Фокусувати вікно qTox при отриманні повідомлення.</translation>
-    </message>
-    <message>
-        <source>Focus window</source>
-        <translation type="unfinished">Фокусувати вікно</translation>
-    </message>
-    <message>
         <source>Contact list</source>
         <translation>Список контактів</translation>
-    </message>
-    <message>
-        <source>Always notify about new messages in groupchats.</source>
-        <comment>toolTip for Group chat always notify</comment>
-        <translation type="unfinished">Завжди повідомляти про нові повідомлення у групових чатах.</translation>
-    </message>
-    <message>
-        <source>Group chats always notify</source>
-        <translation type="unfinished">Постійні повідомлення з групових чатів</translation>
     </message>
     <message>
         <source>If checked, groupchats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2711,6 +2853,44 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use colored nicknames in chats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show a notification when you receive a new message and the window is not selected.</source>
+        <comment>tooltip for Notify setting</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Onlys notify about new messages in groupchats when mentioned.</source>
+        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group chats only notify when mentioned</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play sound</source>
+        <translation type="unfinished">Відтворювати звук</translation>
+    </message>
+    <message>
+        <source>Play sound while Busy</source>
+        <translation type="unfinished">Відтворювати звук якщо Зайнятий</translation>
+    </message>
+    <message>
+        <source>Notify via desktop notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide message sender and contents</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2849,17 +3029,8 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
         <translation>Ваше ім&apos;я</translation>
     </message>
     <message>
-        <source>Your status</source>
-        <translation>Ваш статус</translation>
-    </message>
-    <message>
         <source>Message failed to send</source>
         <translation>Не вдалось відправити повідомлення</translation>
-    </message>
-    <message>
-        <source>&lt;Empty&gt;</source>
-        <comment>Placeholder when someone&apos;s name in a group chat is empty</comment>
-        <translation>&lt;Пусто&gt;</translation>
     </message>
     <message>
         <source>Groupchat #%1</source>
@@ -2914,6 +3085,22 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
         <source>My profile</source>
         <comment>title of the window</comment>
         <translation>Мій профіль</translation>
+    </message>
+    <message>
+        <source>Failed to send file &quot;%1&quot;</source>
+        <translation type="unfinished">Не вдалось відправити файл &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <source>File sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> sent you a friend request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> invites you to join a group.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

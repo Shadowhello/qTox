@@ -119,15 +119,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AboutForm</name>
     <message>
-        <source>Restart qTox to install version %1</source>
-        <translation>重启 qTox 并安装 %1</translation>
-    </message>
-    <message>
-        <source>qTox is downloading update %1</source>
-        <comment>%1 is the version of the update</comment>
-        <translation>qTox 正在下载更新 %1</translation>
-    </message>
-    <message>
         <source>About</source>
         <translation>关于</translation>
     </message>
@@ -195,10 +186,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>status message</source>
         <translation>状态消息</translation>
-    </message>
-    <message>
-        <source>Public key:</source>
-        <translation>公钥：</translation>
     </message>
     <message>
         <source>Used aliases:</source>
@@ -269,13 +256,29 @@ which may lead to problems with video calls.</source>
         <translation>已删除历史记录</translation>
     </message>
     <message>
-        <source>Chat history with %1 removed!</source>
-        <translation>已删除与 %1 的聊天记录！</translation>
-    </message>
-    <message>
         <source>Choose an auto accept directory</source>
         <extracomment>popup title</extracomment>
         <translation>选择自动接受目录</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;这是您朋友的公开密钥，使用它通过其它渠道来验证朋友的身份。您不能将该密钥发送给其他人以使他们可以添加该朋友为联系人。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Public key (not ToxID):</source>
+        <translation>公开密钥（不是 ToxID）：</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation>证实</translation>
+    </message>
+    <message>
+        <source>Are you sure to remove %1 chat history?</source>
+        <translation>您确定要移除与 %1 的聊天记录吗？</translation>
+    </message>
+    <message>
+        <source>Failed to remove chat history with %1!</source>
+        <translation>移除与 %1 的聊天记录失败！</translation>
     </message>
 </context>
 <context>
@@ -283,10 +286,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Version</source>
         <translation>版本</translation>
-    </message>
-    <message>
-        <source>Downloading update: %p%</source>
-        <translation>下载更新中：%p%</translation>
     </message>
     <message>
         <source>License</source>
@@ -299,6 +298,18 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Known Issues</source>
         <translation>已知问题</translation>
+    </message>
+    <message>
+        <source>Open update download link</source>
+        <translation>打开下载更新的链接</translation>
+    </message>
+    <message>
+        <source>Update available</source>
+        <translation>有更新可用</translation>
+    </message>
+    <message utf8="true">
+        <source>qTox is up to date ✓</source>
+        <translation>qTox 已经是最新的 ✓</translation>
     </message>
 </context>
 <context>
@@ -380,7 +391,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation>无法从该文件中找到任何可导入的联系人信息！</translation>
+        <translation>该文件中找不到可导入的联系人信息！</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -404,7 +415,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation>请求添加为好友</translation>
+        <translation>发送好友邀请</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
@@ -419,7 +430,7 @@ which may lead to problems with video calls.</source>
         <source>Ready to import %n contact(s), click send to confirm</source>
         <extracomment>Shows the number of contacts we&apos;re about to import from a file (at least one)</extracomment>
         <translation>
-            <numerusform>准备好要导入 %n 个联系人，单击“发送”以确认</numerusform>
+            <numerusform>已经准备好导入 %n 个联系人，单击“发送”以确认</numerusform>
         </translation>
     </message>
     <message>
@@ -565,6 +576,10 @@ which may lead to problems with video calls.</source>
         <source>Copy Debug Log</source>
         <translation>复制调试日志</translation>
     </message>
+    <message>
+        <source>Enable LAN discovery</source>
+        <translation>开启局域网发现</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>
@@ -575,10 +590,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
         <translation>qTox 无法打开 %1</translation>
-    </message>
-    <message>
-        <source>Load chat history...</source>
-        <translation>加载聊天历史记录…</translation>
     </message>
     <message>
         <source>%1 calling</source>
@@ -595,10 +606,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Copy</source>
         <translation>复制</translation>
-    </message>
-    <message>
-        <source>Failed to send file &quot;%1&quot;</source>
-        <translation>文件“%1”传输失败</translation>
     </message>
     <message>
         <source>Failed to open temporary file</source>
@@ -630,41 +637,23 @@ which may lead to problems with video calls.</source>
         <translation>你尝试发送一个顺序文件，该操作无法完成！</translation>
     </message>
     <message>
-        <source>away</source>
-        <comment>contact status</comment>
-        <translation>离开</translation>
-    </message>
-    <message>
-        <source>busy</source>
-        <comment>contact status</comment>
-        <translation>忙碌</translation>
-    </message>
-    <message>
-        <source>offline</source>
-        <comment>contact status</comment>
-        <translation>离线</translation>
-    </message>
-    <message>
-        <source>online</source>
-        <comment>contact status</comment>
-        <translation>在线</translation>
-    </message>
-    <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
         <translation>%1 现在 %2</translation>
     </message>
     <message>
-        <source>Export to file</source>
-        <translation>导出到文件</translation>
-    </message>
-    <message>
-        <source>Save chat log</source>
-        <translation>保存聊天记录</translation>
-    </message>
-    <message>
         <source>Call with %1 ended unexpectedly. %2</source>
         <translation>与 %1 的通话意外中断。%2</translation>
+    </message>
+    <message>
+        <source>Filename contained illegal characters</source>
+        <translation>文件名包含非法字符</translation>
+    </message>
+    <message>
+        <source>Illegal characters have been changed to _ 
+so you can save the file on windows.</source>
+        <translation>非法字符已经被更改为 _ 
+这样您就可以在 Windows 上保存该文件了。</translation>
     </message>
 </context>
 <context>
@@ -776,10 +765,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>Core</name>
     <message>
-        <source>Toxing on qTox</source>
-        <translation>使用 qTox 与他人交流</translation>
-    </message>
-    <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translation>/me 提供了好友关系,“%1”</translation>
     </message>
@@ -802,6 +787,33 @@ which may lead to problems with video calls.</source>
         <source>Friend is already added</source>
         <comment>Error while sending friendship request</comment>
         <translation>已添加为好友</translation>
+    </message>
+    <message>
+        <source>Groupchat %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DesktopNotify</name>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">新消息</translation>
+    </message>
+    <message>
+        <source>Incoming file transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Friend request received</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New group message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -884,6 +896,11 @@ which may lead to problems with video calls.</source>
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
         <translation>保存文件</translation>
+    </message>
+    <message>
+        <source>Remote Paused</source>
+        <comment>file transfer widget</comment>
+        <translation>对方暂停</translation>
     </message>
 </context>
 <context>
@@ -1044,21 +1061,6 @@ which may lead to problems with video calls.</source>
     </message>
 </context>
 <context>
-    <name>GUI</name>
-    <message>
-        <source>Enter your password</source>
-        <translation>输入密码</translation>
-    </message>
-    <message>
-        <source>Decrypt</source>
-        <translation>解密</translation>
-    </message>
-    <message>
-        <source>You must enter a non-empty password:</source>
-        <translation>你输入的不可为空：</translation>
-    </message>
-</context>
-<context>
     <name>GeneralForm</name>
     <message>
         <source>General</source>
@@ -1141,10 +1143,6 @@ instead of system taskbar.</source>
         <translation>开机自动启动</translation>
     </message>
     <message>
-        <source>Check for updates on startup</source>
-        <translation>在启动时检查更新</translation>
-    </message>
-    <message>
         <source>Set where files will be saved.</source>
         <translation>设置文件保存位置。</translation>
     </message>
@@ -1157,24 +1155,12 @@ instead of system taskbar.</source>
         <translation>默认文件保存目录：</translation>
     </message>
     <message>
-        <source>Play sound</source>
-        <translation>播放声音</translation>
-    </message>
-    <message>
-        <source>On new message:</source>
-        <translation>当收到新消息：</translation>
-    </message>
-    <message>
         <source>Show system tray icon</source>
         <translation>显示系统托盘图标</translation>
     </message>
     <message>
         <source>Light icon</source>
         <translation>使用亮色图标</translation>
-    </message>
-    <message>
-        <source>Faux offline messaging</source>
-        <translation>伪造离线消息</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking them.</source>
@@ -1186,8 +1172,20 @@ instead of system taskbar.</source>
         <translation>自动同意接收文件</translation>
     </message>
     <message>
-        <source>Play sound while Busy</source>
-        <translation>忙碌状态时仍播放提示音</translation>
+        <source>Check for updates</source>
+        <translation>检查更新</translation>
+    </message>
+    <message>
+        <source>Spell checking</source>
+        <translation>拼写检查</translation>
+    </message>
+    <message>
+        <source>Max autoaccept file size (0 to disable):</source>
+        <translation>自动接收的最大文件尺寸（0 为禁用）：</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
     </message>
 </context>
 <context>
@@ -1217,10 +1215,6 @@ instead of system taskbar.</source>
         <translation>清屏</translation>
     </message>
     <message>
-        <source>Not sent</source>
-        <translation>未发送</translation>
-    </message>
-    <message>
         <source>Cleared</source>
         <translation>已清除</translation>
     </message>
@@ -1231,6 +1225,30 @@ instead of system taskbar.</source>
     <message>
         <source>Copy link address</source>
         <translation>复制链接地址</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation>确认</translation>
+    </message>
+    <message>
+        <source>You are sure that you want to clear all displayed messages?</source>
+        <translation>您确认要清除所有显示的消息吗？</translation>
+    </message>
+    <message>
+        <source>Search in text</source>
+        <translation>在文本中搜索</translation>
+    </message>
+    <message>
+        <source>Go to current date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load chat history...</source>
+        <translation type="unfinished">加载聊天历史记录…</translation>
+    </message>
+    <message>
+        <source>Export to file</source>
+        <translation type="unfinished">导出到文件</translation>
     </message>
 </context>
 <context>
@@ -1247,30 +1265,63 @@ instead of system taskbar.</source>
         <source>Hide Messages</source>
         <translation>隐藏消息</translation>
     </message>
-</context>
-<context>
-    <name>Group</name>
     <message>
-        <source>&lt;Empty&gt;</source>
-        <comment>Placeholder when someone&apos;s name in a group chat is empty</comment>
-        <translation>&lt;空&gt;</translation>
+        <source>Full Screen</source>
+        <translation>全屏</translation>
+    </message>
+    <message>
+        <source>Toggle video preview</source>
+        <translation>切换视频预览</translation>
+    </message>
+    <message>
+        <source>Mute audio</source>
+        <translation>静音</translation>
+    </message>
+    <message>
+        <source>Mute microphone</source>
+        <translation>使麦克风静音</translation>
+    </message>
+    <message>
+        <source>End video call</source>
+        <translation>结束视频通话</translation>
+    </message>
+    <message>
+        <source>Exit full screen</source>
+        <translation>退出全屏</translation>
     </message>
 </context>
 <context>
     <name>GroupChatForm</name>
     <message>
-        <source>%1 users in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>%1 人正在聊天</translation>
-    </message>
-    <message>
-        <source>1 user in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>对话中有 1 个用户</translation>
-    </message>
-    <message>
         <source>%1 has set the title to %2</source>
         <translation>%1 已将标题设置为 %2</translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
+        <translation>%1 加入了群组</translation>
+    </message>
+    <message>
+        <source>%1 is now known as %2</source>
+        <translation>%1更名为 %2</translation>
+    </message>
+    <message>
+        <source>%1 has left the group</source>
+        <translation>%1 离开了群</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n 位用户正在聊天</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>免打扰</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>关闭免打扰</translation>
     </message>
 </context>
 <context>
@@ -1292,7 +1343,7 @@ instead of system taskbar.</source>
     <name>GroupInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>%1 于 %2 在 %3 邀请。</translation>
+        <translation>%1 于 %2 %3 邀请。</translation>
     </message>
     <message>
         <source>Join</source>
@@ -1305,10 +1356,6 @@ instead of system taskbar.</source>
 </context>
 <context>
     <name>GroupWidget</name>
-    <message>
-        <source>%1 users in chat</source>
-        <translation>%1 人正在聊天</translation>
-    </message>
     <message>
         <source>Remove chat from this window</source>
         <translation>从这个窗口中删除会话</translation>
@@ -1326,9 +1373,20 @@ instead of system taskbar.</source>
         <source>Open chat in new window</source>
         <translation>在新窗口打开会话</translation>
     </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n 位用户正在聊天</numerusform>
+        </translation>
+    </message>
     <message>
-        <source>1 user in chat</source>
-        <translation>会话中有 1 个用户</translation>
+        <source>New Message</source>
+        <translation>新消息</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>在线</translation>
     </message>
 </context>
 <context>
@@ -1571,12 +1629,28 @@ Profile does not contain your history.</source>
         <translation>加载历史记录</translation>
     </message>
     <message>
-        <source>Load history from:</source>
-        <translation>从此处加载历史记录：</translation>
+        <source>Load history</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 messages</source>
-        <translation>%1 条消息</translation>
+        <source>from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(about 100 messages are loaded)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Date Dialog</source>
+        <translation type="unfinished">选择日期对话框</translation>
+    </message>
+    <message>
+        <source>Select a date</source>
+        <translation type="unfinished">选择日期</translation>
     </message>
 </context>
 <context>
@@ -1644,12 +1718,6 @@ Please make sure to enter same password twice.</source>
         <translation>该配置已经存在。</translation>
     </message>
     <message>
-        <source>Unknown error: Couldn&apos;t create a new profile.
-If you encountered this error, please report it.</source>
-        <translation>未知错误：无法创建新配置。
-如果你遇到这个错误，请提交报告。</translation>
-    </message>
-    <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>不能自动加载密码保护的配置。</translation>
     </message>
@@ -1672,10 +1740,6 @@ You may want to create one.</source>
     <message>
         <source>This profile is already in use.</source>
         <translation>该配置正在使用。</translation>
-    </message>
-    <message>
-        <source>Profile already in use. Close other clients.</source>
-        <translation>配置正在使用。关闭其他客户端。</translation>
     </message>
     <message>
         <source>Wrong password.</source>
@@ -1840,11 +1904,6 @@ You may want to create one.</source>
 <context>
     <name>Nexus</name>
     <message>
-        <source>Images (%1)</source>
-        <comment>filetype filter</comment>
-        <translation>图片（%1）</translation>
-    </message>
-    <message>
         <source>View</source>
         <comment>OS X Menu bar</comment>
         <translation>查看</translation>
@@ -1897,7 +1956,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation>认证声明</translation>
+        <translation>确认</translation>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
@@ -1971,6 +2030,10 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     <message>
         <source>Couldn&apos;t change password on the database, it might be corrupted or use the old password.</source>
         <translation>无法修改数据库中的密码。数据库可能损坏或使用了旧的密码。</translation>
+    </message>
+    <message>
+        <source>Toxing on qTox</source>
+        <translation>使用 qTox 与他人交流</translation>
     </message>
 </context>
 <context>
@@ -2190,6 +2253,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <extracomment>deletion confirmation text</extracomment>
         <translation>你确定要删除密码吗？</translation>
     </message>
+    <message>
+        <source>Images (%1)</source>
+        <comment>filetype filter</comment>
+        <translation>图片（%1）</translation>
+    </message>
 </context>
 <context>
     <name>ProfileImporter</name>
@@ -2244,7 +2312,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>QApplication</name>
     <message>
         <source>Ok</source>
-        <translation>确认</translation>
+        <translation>Ok</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2282,17 +2350,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>QObject</name>
-    <message>
-        <source>Update</source>
-        <comment>The title of a message box</comment>
-        <translation>升级</translation>
-    </message>
-    <message>
-        <source>An update is available, do you want to download it now?
-It will be installed when qTox restarts.</source>
-        <translation>有新的可用升级, 确定要现在下载吗？
-这些更新将在qTox下次启动时被安装。</translation>
-    </message>
     <message>
         <source>Tox URI to parse</source>
         <translation>Tox URI 解析</translation>
@@ -2393,10 +2450,6 @@ It will be installed when qTox restarts.</source>
         <translation>桌面</translation>
     </message>
     <message>
-        <source>Version %1, %2</source>
-        <translation>版本 %1, %2</translation>
-    </message>
-    <message>
         <source>Problem with HTTPS connection</source>
         <translation>HTTPS 连接问题</translation>
     </message>
@@ -2411,6 +2464,55 @@ It will be installed when qTox restarts.</source>
     <message>
         <source>Starts new instance and opens the login screen.</source>
         <translation>开启一个新进程并打开登录界面。</translation>
+    </message>
+    <message>
+        <source>Dark</source>
+        <translation>暗色</translation>
+    </message>
+    <message>
+        <source>Dark blue</source>
+        <translation>深蓝</translation>
+    </message>
+    <message>
+        <source>Dark olive</source>
+        <translation>橄榄绿</translation>
+    </message>
+    <message>
+        <source>Dark red</source>
+        <translation>暗红</translation>
+    </message>
+    <message>
+        <source>Dark violet</source>
+        <translation>紫罗兰</translation>
+    </message>
+    <message>
+        <source>Failed to load profile automatically.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>online</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">在线</translation>
+    </message>
+    <message>
+        <source>away</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">离开</translation>
+    </message>
+    <message>
+        <source>busy</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">忙碌</translation>
+    </message>
+    <message>
+        <source>offline</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">离线</translation>
+    </message>
+    <message>
+        <source>blocked</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">被屏蔽</translation>
     </message>
 </context>
 <context>
@@ -2462,6 +2564,60 @@ It will be installed when qTox restarts.</source>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translation>回车</translation>
+    </message>
+</context>
+<context>
+    <name>SearchForm</name>
+    <message>
+        <source>The text could not be found.</source>
+        <translation>无法找到文本。</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>开始</translation>
+    </message>
+</context>
+<context>
+    <name>SearchSettingsForm</name>
+    <message>
+        <source>Form</source>
+        <translation>表单</translation>
+    </message>
+    <message>
+        <source>Start search:</source>
+        <translation>开始搜索：</translation>
+    </message>
+    <message>
+        <source>from the end</source>
+        <translation>从结尾</translation>
+    </message>
+    <message>
+        <source>from the beginning</source>
+        <translation>从开头</translation>
+    </message>
+    <message>
+        <source>after date</source>
+        <translation>日期之后</translation>
+    </message>
+    <message>
+        <source>before date</source>
+        <translation>日期之前</translation>
+    </message>
+    <message>
+        <source>00.00.0000</source>
+        <translation>00.00.0000</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>区分大小写</translation>
+    </message>
+    <message>
+        <source>Whole words only</source>
+        <translation>仅完整的词</translation>
+    </message>
+    <message>
+        <source>Use regular expressions</source>
+        <translation>使用正则表达</translation>
     </message>
 </context>
 <context>
@@ -2611,26 +2767,8 @@ It will be installed when qTox restarts.</source>
         <translation>打开窗口</translation>
     </message>
     <message>
-        <source>Focus qTox when you receive message.</source>
-        <comment>toolTip for Focus window setting</comment>
-        <translation>当收到消息时将 qTox 窗口设为活动窗口。</translation>
-    </message>
-    <message>
-        <source>Focus window</source>
-        <translation>设为活动窗口</translation>
-    </message>
-    <message>
         <source>Contact list</source>
         <translation>联系人列表</translation>
-    </message>
-    <message>
-        <source>Always notify about new messages in groupchats.</source>
-        <comment>toolTip for Group chat always notify</comment>
-        <translation>总是提醒新的群聊消息。</translation>
-    </message>
-    <message>
-        <source>Group chats always notify</source>
-        <translation>提醒所有群聊消息</translation>
     </message>
     <message>
         <source>If checked, groupchats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2708,6 +2846,44 @@ It will be installed when qTox restarts.</source>
         <source>Use identicons instead of empty avatars</source>
         <translation>使用 identicons 代替空的头像</translation>
     </message>
+    <message>
+        <source>Use colored nicknames in chats</source>
+        <translation>在交谈中使用彩色昵称</translation>
+    </message>
+    <message>
+        <source>Show a notification when you receive a new message and the window is not selected.</source>
+        <comment>tooltip for Notify setting</comment>
+        <translation>当窗口没有激活时如果收到新消息就显示提醒。</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>通知</translation>
+    </message>
+    <message>
+        <source>Onlys notify about new messages in groupchats when mentioned.</source>
+        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <translation>在群聊中仅通知提到了自己的新消息。</translation>
+    </message>
+    <message>
+        <source>Group chats only notify when mentioned</source>
+        <translation>群聊消息只有在被提到时才通知</translation>
+    </message>
+    <message>
+        <source>Play sound</source>
+        <translation>播放声音</translation>
+    </message>
+    <message>
+        <source>Play sound while Busy</source>
+        <translation>忙碌状态时仍播放提示音</translation>
+    </message>
+    <message>
+        <source>Notify via desktop notifications</source>
+        <translation>通过桌面提醒来通知</translation>
+    </message>
+    <message>
+        <source>Hide message sender and contents</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>
@@ -2749,10 +2925,6 @@ It will be installed when qTox restarts.</source>
         <translation>你的名字</translation>
     </message>
     <message>
-        <source>Your status</source>
-        <translation>你的状态</translation>
-    </message>
-    <message>
         <source>Offline</source>
         <translation>离线</translation>
     </message>
@@ -2790,11 +2962,6 @@ It will be installed when qTox restarts.</source>
         <source>Executable file</source>
         <comment>popup title</comment>
         <translation>可执行文件</translation>
-    </message>
-    <message>
-        <source>&lt;Empty&gt;</source>
-        <comment>Placeholder when someone&apos;s name in a group chat is empty</comment>
-        <translation>&lt;空&gt;</translation>
     </message>
     <message>
         <source>Groupchat #%1</source>
@@ -2905,6 +3072,22 @@ It will be installed when qTox restarts.</source>
         <source>My profile</source>
         <comment>title of the window</comment>
         <translation>个人资料</translation>
+    </message>
+    <message>
+        <source>Failed to send file &quot;%1&quot;</source>
+        <translation type="unfinished">文件“%1”传输失败</translation>
+    </message>
+    <message>
+        <source>File sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> sent you a friend request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> invites you to join a group.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

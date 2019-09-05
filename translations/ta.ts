@@ -123,15 +123,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">குறிப்பு</translation>
     </message>
     <message>
-        <source>Restart qTox to install version %1</source>
-        <translation type="unfinished">பதி்ப்பு %1 நிறுவ qTox ஐ மறுதொடக்கம் செய்யவும்</translation>
-    </message>
-    <message>
-        <source>qTox is downloading update %1</source>
-        <comment>%1 is the version of the update</comment>
-        <translation type="unfinished">qTox புதுப்பிப்பு %1 ஐ பதிவிறக்கம் செய்கிறது</translation>
-    </message>
-    <message>
         <source>Original author: %1</source>
         <translation type="unfinished">மூல படைப்பாளர்: %1</translation>
     </message>
@@ -196,10 +187,6 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <message>
         <source>status message</source>
         <translation type="unfinished">நிலைச்செய்தி</translation>
-    </message>
-    <message>
-        <source>Public key:</source>
-        <translation type="unfinished">பொதுமை விசை:</translation>
     </message>
     <message>
         <source>Used aliases:</source>
@@ -270,13 +257,29 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <translation type="unfinished">வரலாறு அகற்றப்பட்டது</translation>
     </message>
     <message>
-        <source>Chat history with %1 removed!</source>
-        <translation type="unfinished">%1 உடனான அரட்டை வரலாறு அகற்றப்பட்டது!</translation>
-    </message>
-    <message>
         <source>Choose an auto accept directory</source>
         <extracomment>popup title</extracomment>
         <translation type="unfinished">தன்னிச்சையேற்புக்கான கோப்பகத்தைத் தேர்வு செய்க</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Public key (not ToxID):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure to remove %1 chat history?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to remove chat history with %1!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -284,10 +287,6 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <message>
         <source>Version</source>
         <translation>பதிப்பு</translation>
-    </message>
-    <message>
-        <source>Downloading update: %p%</source>
-        <translation>புதுப்பிப்பு பதிவிறக்கப்படுகிறது: %p%</translation>
     </message>
     <message>
         <source>License</source>
@@ -300,6 +299,18 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <message>
         <source>Known Issues</source>
         <translation>முன்னறிந்த சிக்கல்கள்</translation>
+    </message>
+    <message>
+        <source>Open update download link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <source>qTox is up to date ✓</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -567,13 +578,13 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <source>Copy Debug Log</source>
         <translation>பிழைதேட்டுப் பதிவை இடைநிலைப் பிரதியெடு</translation>
     </message>
+    <message>
+        <source>Enable LAN discovery</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>
-    <message>
-        <source>Load chat history...</source>
-        <translation>அரட்டை வரலாற்றை திரையேற்று...</translation>
-    </message>
     <message>
         <source>Send a file</source>
         <translation>கோப்பு ஒன்றை அனுப்பு</translation>
@@ -597,10 +608,6 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <message>
         <source>Calling %1</source>
         <translation type="unfinished">%1 அழைக்கப்படுகிறார்</translation>
-    </message>
-    <message>
-        <source>Failed to send file &quot;%1&quot;</source>
-        <translation>கோப்பு %1 அனுப்ப இயலவில்லை</translation>
     </message>
     <message>
         <source>Failed to open temporary file</source>
@@ -633,40 +640,21 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <translation>தொடர்முறைப்படிவக் கோப்பினை அனுப்ப நீங்கள் முயல்வது வினைப்பயன் பெறாது!</translation>
     </message>
     <message>
-        <source>away</source>
-        <comment>contact status</comment>
-        <translation type="unfinished">விலகியுள்ளார்</translation>
-    </message>
-    <message>
-        <source>busy</source>
-        <comment>contact status</comment>
-        <translation type="unfinished">வேறுவினையேற்றுள்ளார்</translation>
-    </message>
-    <message>
-        <source>offline</source>
-        <comment>contact status</comment>
-        <translation type="unfinished">தொடர்பற்றுள்ளார்</translation>
-    </message>
-    <message>
-        <source>online</source>
-        <comment>contact status</comment>
-        <translation type="unfinished">தொடர்பிலுள்ளார்</translation>
-    </message>
-    <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
         <translation>%1 இப்பொழுது %2</translation>
     </message>
     <message>
-        <source>Export to file</source>
-        <translation>தனிக்கோப்பாக்கு</translation>
-    </message>
-    <message>
-        <source>Save chat log</source>
-        <translation>அரட்டைப் பதிவைச் சேமி</translation>
-    </message>
-    <message>
         <source>Call with %1 ended unexpectedly. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filename contained illegal characters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Illegal characters have been changed to _ 
+so you can save the file on windows.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -779,10 +767,6 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
 <context>
     <name>Core</name>
     <message>
-        <source>Toxing on qTox</source>
-        <translation>qTox இல் Tox செய்கிறேன்</translation>
-    </message>
-    <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translation>/me தோழராக விரும்புகிறார் , &quot;%1&quot;</translation>
     </message>
@@ -805,6 +789,33 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <source>Friend is already added</source>
         <comment>Error while sending friendship request</comment>
         <translation>முன்னரே தோழராக்கப்பட்டார்</translation>
+    </message>
+    <message>
+        <source>Groupchat %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DesktopNotify</name>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">புதிய செய்தி</translation>
+    </message>
+    <message>
+        <source>Incoming file transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Friend request received</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New group message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -892,6 +903,11 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
         <translation>கோப்பொன்று சேமி</translation>
+    </message>
+    <message>
+        <source>Remote Paused</source>
+        <comment>file transfer widget</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1053,21 +1069,6 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
 </context>
 <context>
-    <name>GUI</name>
-    <message>
-        <source>Enter your password</source>
-        <translation>கடவுச்சரத்தை உள்ளிடுக</translation>
-    </message>
-    <message>
-        <source>Decrypt</source>
-        <translation type="unfinished">சரிமொழியாக்கு</translation>
-    </message>
-    <message>
-        <source>You must enter a non-empty password:</source>
-        <translation>தாங்கள் வெற்றல்லாத கடவுச்சரத்தை உள்ளிட வேண்டும்:</translation>
-    </message>
-</context>
-<context>
     <name>GeneralForm</name>
     <message>
         <source>General</source>
@@ -1142,10 +1143,6 @@ instead of system taskbar.</source>
         <translation>தான்தோற்றம்</translation>
     </message>
     <message>
-        <source>Check for updates on startup</source>
-        <translation>தொடக்கத்தில் புதுப்பிப்புகளுக்காக சோதி</translation>
-    </message>
-    <message>
         <source>Set where files will be saved.</source>
         <translation>கோப்புகள் சேமிக்குமிடத்தைத் தேர்ந்தெடுந்தெடுங்கள்.</translation>
     </message>
@@ -1175,18 +1172,6 @@ instead of system taskbar.</source>
         <translation>தோழர்களின் நிலைச்செய்தி மாற்றங்களைக் காண்பி</translation>
     </message>
     <message>
-        <source>On new message:</source>
-        <translation>புதிய அரட்டைச்செய்தி வரின்:</translation>
-    </message>
-    <message>
-        <source>Play sound</source>
-        <translation>ஒலியெழுப்பு</translation>
-    </message>
-    <message>
-        <source>Faux offline messaging</source>
-        <translation>போலித் தொடர்பற்றநிலையிற்செய்தியனுப்பல்</translation>
-    </message>
-    <message>
         <source>Start qTox on operating system startup (current profile).</source>
         <translation>கணிணியமைப்பியக்கியின் தொடக்கத்தில் qTox உம் தான்தொடங்கட்டும் (தற்போதைய பயனர் விவரமமைப்புத்தொகுப்பு).</translation>
     </message>
@@ -1195,8 +1180,20 @@ instead of system taskbar.</source>
         <translation type="unfinished">கோப்புகளை சேமிக்க பொது கோப்பகம்:</translation>
     </message>
     <message>
-        <source>Play sound while Busy</source>
-        <translation>வேறுவினையேற்றுள்ளபோது ஒலியெழுப்பு</translation>
+        <source>Check for updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spell checking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max autoaccept file size (0 to disable):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1226,10 +1223,6 @@ instead of system taskbar.</source>
         <translation>திரையிலுள்ள செய்திகளை நீக்கு</translation>
     </message>
     <message>
-        <source>Not sent</source>
-        <translation>செய்தி அனுப்பப்படவில்லை</translation>
-    </message>
-    <message>
         <source>Cleared</source>
         <translation>திரைத்தெளிவாக்கப்பட்டது</translation>
     </message>
@@ -1240,6 +1233,30 @@ instead of system taskbar.</source>
     <message>
         <source>Copy link address</source>
         <translation>இணை முகவரியை இடைப்பிரதியெடு</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are sure that you want to clear all displayed messages?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search in text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Go to current date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load chat history...</source>
+        <translation type="unfinished">அரட்டை வரலாற்றை திரையேற்று...</translation>
+    </message>
+    <message>
+        <source>Export to file</source>
+        <translation type="unfinished">தனிக்கோப்பாக்கு</translation>
     </message>
 </context>
 <context>
@@ -1256,29 +1273,63 @@ instead of system taskbar.</source>
         <source>Hide Messages</source>
         <translation>செய்திகளை மறை</translation>
     </message>
-</context>
-<context>
-    <name>Group</name>
     <message>
-        <source>&lt;Empty&gt;</source>
-        <comment>Placeholder when someone&apos;s name in a group chat is empty</comment>
-        <translation>&lt;பெயரில்லை&gt;</translation>
+        <source>Full Screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle video preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute microphone</source>
+        <translation type="unfinished">ஒலிவாங்கியை ஒலியணை</translation>
+    </message>
+    <message>
+        <source>End video call</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit full screen</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GroupChatForm</name>
     <message>
-        <source>1 user in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>அரட்டையில் 1 பயனர்</translation>
-    </message>
-    <message>
-        <source>%1 users in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>அரட்டையில் %1 பயனர்கள்</translation>
-    </message>
-    <message>
         <source>%1 has set the title to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 is now known as %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 has left the group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unmute</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1315,10 +1366,6 @@ instead of system taskbar.</source>
 <context>
     <name>GroupWidget</name>
     <message>
-        <source>%1 users in chat</source>
-        <translation>அரட்டையில் %1 பயனர்கள்</translation>
-    </message>
-    <message>
         <source>Set title...</source>
         <translation>தலைப்பு வை...</translation>
     </message>
@@ -1335,9 +1382,21 @@ instead of system taskbar.</source>
         <comment>Menu to quit a groupchat</comment>
         <translation>தோழர்க்குழுவை நீங்கு</translation>
     </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
-        <source>1 user in chat</source>
-        <translation>அரட்டையில் 1 பயனர்</translation>
+        <source>New Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">தொடர்பிலுள்ளார்</translation>
     </message>
 </context>
 <context>
@@ -1580,11 +1639,27 @@ Profile does not contain your history.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Load history from:</source>
+        <source>Load history</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 messages</source>
+        <source>from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(about 100 messages are loaded)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Date Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a date</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1652,11 +1727,6 @@ Please make sure to enter same password twice.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown error: Couldn&apos;t create a new profile.
-If you encountered this error, please report it.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1676,10 +1746,6 @@ You may want to create one.</source>
     </message>
     <message>
         <source>This profile is already in use.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Profile already in use. Close other clients.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1846,11 +1912,6 @@ You may want to create one.</source>
 <context>
     <name>Nexus</name>
     <message>
-        <source>Images (%1)</source>
-        <comment>filetype filter</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>View</source>
         <comment>OS X Menu bar</comment>
         <translation type="unfinished"></translation>
@@ -1974,6 +2035,10 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Couldn&apos;t change password on the database, it might be corrupted or use the old password.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toxing on qTox</source>
+        <translation type="unfinished">qTox இல் Tox செய்கிறேன்</translation>
     </message>
 </context>
 <context>
@@ -2189,6 +2254,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <extracomment>deletion confirmation text</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Images (%1)</source>
+        <comment>filetype filter</comment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ProfileImporter</name>
@@ -2281,20 +2351,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>QObject</name>
-    <message>
-        <source>Version %1, %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Update</source>
-        <comment>The title of a message box</comment>
-        <translation type="unfinished">புதுப்பி</translation>
-    </message>
-    <message>
-        <source>An update is available, do you want to download it now?
-It will be installed when qTox restarts.</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Tox URI to parse</source>
         <translation type="unfinished"></translation>
@@ -2410,6 +2466,55 @@ It will be installed when qTox restarts.</source>
         <source>Starts new instance and opens the login screen.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark blue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark olive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark red</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dark violet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to load profile automatically.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>online</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">தொடர்பிலுள்ளார்</translation>
+    </message>
+    <message>
+        <source>away</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">விலகியுள்ளார்</translation>
+    </message>
+    <message>
+        <source>busy</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">வேறுவினையேற்றுள்ளார்</translation>
+    </message>
+    <message>
+        <source>offline</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">தொடர்பற்றுள்ளார்</translation>
+    </message>
+    <message>
+        <source>blocked</source>
+        <comment>contact status</comment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RemoveFriendDialog</name>
@@ -2459,6 +2564,60 @@ It will be installed when qTox restarts.</source>
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SearchForm</name>
+    <message>
+        <source>The text could not be found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SearchSettingsForm</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">படிவம்</translation>
+    </message>
+    <message>
+        <source>Start search:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from the end</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from the beginning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>after date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>before date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>00.00.0000</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whole words only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use regular expressions</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2609,25 +2768,7 @@ It will be installed when qTox restarts.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Focus qTox when you receive message.</source>
-        <comment>toolTip for Focus window setting</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Focus window</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Contact list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Always notify about new messages in groupchats.</source>
-        <comment>toolTip for Group chat always notify</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Group chats always notify</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2704,6 +2845,44 @@ It will be installed when qTox restarts.</source>
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use colored nicknames in chats</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show a notification when you receive a new message and the window is not selected.</source>
+        <comment>tooltip for Notify setting</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Onlys notify about new messages in groupchats when mentioned.</source>
+        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group chats only notify when mentioned</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play sound</source>
+        <translation type="unfinished">ஒலியெழுப்பு</translation>
+    </message>
+    <message>
+        <source>Play sound while Busy</source>
+        <translation type="unfinished">வேறுவினையேற்றுள்ளபோது ஒலியெழுப்பு</translation>
+    </message>
+    <message>
+        <source>Notify via desktop notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide message sender and contents</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2806,15 +2985,6 @@ It will be installed when qTox restarts.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Your status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;Empty&gt;</source>
-        <comment>Placeholder when someone&apos;s name in a group chat is empty</comment>
-        <translation type="unfinished">&lt;பெயரில்லை&gt;</translation>
-    </message>
-    <message>
         <source>Message failed to send</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2905,6 +3075,22 @@ It will be installed when qTox restarts.</source>
     <message>
         <source>My profile</source>
         <comment>title of the window</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to send file &quot;%1&quot;</source>
+        <translation type="unfinished">கோப்பு %1 அனுப்ப இயலவில்லை</translation>
+    </message>
+    <message>
+        <source>File sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> sent you a friend request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> invites you to join a group.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

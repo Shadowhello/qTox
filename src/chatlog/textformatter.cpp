@@ -1,5 +1,5 @@
 /*
-    Copyright © 2017-2018 by The qTox Project Contributors
+    Copyright © 2017-2019 by The qTox Project Contributors
 
     This file is part of qTox, a Qt-based graphical interface for Tox.
 
@@ -79,7 +79,7 @@ static const QString HREF_WRAPPER = QStringLiteral(R"(<a href="%1">%1</a>)");
 static const QString WWW_WRAPPER = QStringLiteral(R"(<a href="http://%1">%1</a>)");
 
 static const QVector<QRegularExpression> WWW_WORD_PATTERN = {
-        QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*((www)\S+))"))
+        QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*((www\.)\S+))"))
 };
 
 static const QVector<QRegularExpression> URI_WORD_PATTERNS = {
@@ -90,6 +90,7 @@ static const QVector<QRegularExpression> URI_WORD_PATTERNS = {
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(tox:[a-zA-Z\d]{76}))")),
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(mailto:\S+@\S+\.\S+))")),
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(tox:\S+@\S+))")),
+    QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(magnet:[?]((xt(.\d)?=urn:)|(mt=)|(kt=)|(tr=)|(dn=)|(xl=)|(xs=)|(as=)|(x.))[\S| ]+))")),
 };
 
 

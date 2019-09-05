@@ -1,6 +1,6 @@
 #!/bin/bash
-#
-#    Copyright © 2016-2018 by The qTox Project Contributors
+
+#    Copyright © 2016-2019 by The qTox Project Contributors
 #
 #    This program is libre software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -20,6 +20,7 @@
 set -eu -o pipefail
 
 # Obtain doxygen and its deps
+sudo apt-get update -qq
 sudo apt-get install doxygen graphviz
 
 # can fail due to travis cloning only `depth=50`

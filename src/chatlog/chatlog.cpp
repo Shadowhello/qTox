@@ -1,5 +1,5 @@
 /*
-    Copyright © 2014-2018 by The qTox Project Contributors
+    Copyright © 2014-2019 by The qTox Project Contributors
 
     This file is part of qTox, a Qt-based graphical interface for Tox.
 
@@ -23,6 +23,7 @@
 #include "chatmessage.h"
 #include "content/filetransferwidget.h"
 #include "src/widget/translator.h"
+#include "src/widget/style.h"
 
 #include <QAction>
 #include <QApplication>
@@ -32,6 +33,9 @@
 #include <QScrollBar>
 #include <QShortcut>
 #include <QTimer>
+
+#include <algorithm>
+#include <cassert>
 
 /**
  * @var ChatLog::repNameAfter
@@ -48,8 +52,8 @@ T clamp(T x, T min, T max)
     return x;
 }
 
-ChatLog::ChatLog(QWidget* parent)
-    : QGraphicsView(parent)
+ChatLog::ChatLog(const bool canRemove, QWidget* parent)
+    : QGraphicsView(parent), canRemove(canRemove)
 {
     // Create the scene
     busyScene = new QGraphicsScene(this);
@@ -65,7 +69,7 @@ ChatLog::ChatLog(QWidget* parent)
     setDragMode(QGraphicsView::NoDrag);
     setViewportUpdateMode(MinimalViewportUpdate);
     setContextMenuPolicy(Qt::CustomContextMenu);
-    setBackgroundBrush(QBrush(Qt::white, Qt::SolidPattern));
+    setBackgroundBrush(QBrush(Style::getColor(Style::GroundBase), Qt::SolidPattern));
 
     // The selection rect for multi-line selection
     selGraphItem = scene->addRect(0, 0, 0, 0, selectionRectColor.darker(120), selectionRectColor);
@@ -167,8 +171,9 @@ void ChatLog::updateSceneRect()
 
 void ChatLog::layout(int start, int end, qreal width)
 {
-    if (lines.empty())
+    if (lines.empty()) {
         return;
+    }
 
     qreal h = 0.0;
 
@@ -311,8 +316,9 @@ void ChatLog::mouseMoveEvent(QMouseEvent* ev)
 // Much faster than QGraphicsScene::itemAt()!
 ChatLineContent* ChatLog::getContentFromPos(QPointF scenePos) const
 {
-    if (lines.empty())
+    if (lines.empty()) {
         return nullptr;
+    }
 
     auto itr =
         std::lower_bound(lines.cbegin(), lines.cend(), scenePos.y(), ChatLine::lessThanBSRectBottom);
@@ -360,6 +366,7 @@ void ChatLog::reposition(int start, int end, qreal deltaY)
 
 void ChatLog::insertChatlineAtBottom(ChatLine::Ptr l)
 {
+    numRemove = 0;
     if (!l.get())
         return;
 
@@ -381,8 +388,35 @@ void ChatLog::insertChatlineAtBottom(ChatLine::Ptr l)
     updateTypingNotification();
 }
 
+void ChatLog::insertChatlineAtBottom(const QList<ChatLine::Ptr>& newLines)
+{
+    numRemove = 0;
+    if (newLines.isEmpty())
+        return;
+
+    if (canRemove && lines.size() + DEF_NUM_MSG_TO_LOAD >= maxMessages) {
+        removeFirsts(DEF_NUM_MSG_TO_LOAD);
+    }
+
+    for (ChatLine::Ptr l : newLines) {
+        l->setRow(lines.size());
+        l->addToScene(scene);
+        l->visibilityChanged(false);
+        lines.append(l);
+    }
+
+    layout(lines.last()->getRow(), lines.size(), useableWidth());
+
+    if (visibleLines.size() > 1) {
+        startResizeWorker(visibleLines[1]);
+    } else {
+        startResizeWorker();
+    }
+}
+
 void ChatLog::insertChatlineOnTop(ChatLine::Ptr l)
 {
+    numRemove = 0;
     if (!l.get())
         return;
 
@@ -391,6 +425,7 @@ void ChatLog::insertChatlineOnTop(ChatLine::Ptr l)
 
 void ChatLog::insertChatlinesOnTop(const QList<ChatLine::Ptr>& newLines)
 {
+    numRemove = 0;
     if (newLines.isEmpty())
         return;
 
@@ -410,6 +445,10 @@ void ChatLog::insertChatlinesOnTop(const QList<ChatLine::Ptr>& newLines)
         combLines.push_back(l);
     }
 
+    if (canRemove && lines.size() + DEF_NUM_MSG_TO_LOAD >= maxMessages) {
+        removeLasts(DEF_NUM_MSG_TO_LOAD);
+    }
+
     // add the old lines
     for (ChatLine::Ptr l : lines) {
         l->setRow(i++);
@@ -418,10 +457,17 @@ void ChatLog::insertChatlinesOnTop(const QList<ChatLine::Ptr>& newLines)
 
     lines = combLines;
 
+    moveSelectionRectDownIfMulti(newLines.size());
+
     scene->setItemIndexMethod(oldIndexMeth);
 
     // redo layout
-    startResizeWorker();
+    if (visibleLines.size() > 1) {
+        startResizeWorker(visibleLines[1]);
+    } else {
+        startResizeWorker();
+    }
+
 }
 
 bool ChatLog::stickToBottom() const
@@ -435,18 +481,22 @@ void ChatLog::scrollToBottom()
     verticalScrollBar()->setValue(verticalScrollBar()->maximum());
 }
 
-void ChatLog::startResizeWorker()
+void ChatLog::startResizeWorker(ChatLine::Ptr anchorLine)
 {
-    if (lines.empty())
+    if (lines.empty()) {
+        isScroll = true;
         return;
+    }
 
     // (re)start the worker
     if (!workerTimer->isActive()) {
         // these values must not be reevaluated while the worker is running
-        workerStb = stickToBottom();
-
-        if (!visibleLines.empty())
-            workerAnchorLine = visibleLines.first();
+        if (anchorLine) {
+            workerAnchorLine = anchorLine;
+            workerStb = false;
+        } else {
+            workerStb = stickToBottom();
+        }
     }
 
     // switch to busy scene displaying the busy notification if there is a lot
@@ -633,14 +683,20 @@ void ChatLog::scrollToLine(ChatLine::Ptr line)
     if (!line.get())
         return;
 
-    updateSceneRect();
-    verticalScrollBar()->setValue(line->sceneBoundingRect().top());
+    if (workerTimer->isActive()) {
+        workerAnchorLine = line;
+        workerStb = false;
+    } else {
+        updateSceneRect();
+        verticalScrollBar()->setValue(line->sceneBoundingRect().top());
+    }
 }
 
 void ChatLog::selectAll()
 {
-    if (lines.empty())
+    if (lines.empty()) {
         return;
+    }
 
     clearSelection();
 
@@ -659,15 +715,109 @@ void ChatLog::fontChanged(const QFont& font)
     }
 }
 
+void ChatLog::reloadTheme()
+{
+    setBackgroundBrush(QBrush(Style::getColor(Style::GroundBase), Qt::SolidPattern));
+    selectionRectColor = Style::getColor(Style::SelectText);
+    selGraphItem->setBrush(QBrush(selectionRectColor));
+    selGraphItem->setPen(QPen(selectionRectColor.darker(120)));
+
+    for (ChatLine::Ptr l : lines) {
+        l->reloadTheme();
+    }
+}
+
+/**
+ * @brief Adjusts the multi line selection rectangle based on chatlog changing lines
+ * @param offset Amount to shift selection rect up by. Must be non-negative.
+  */
+void ChatLog::moveSelectionRectUpIfMulti(int offset)
+{
+    assert(offset >= 0);
+    if (selectionMode != Multi) {
+        return;
+    }
+    if (selLastRow < offset) { // entire selection now out of bounds
+        clearSelection();
+        return;
+    } else {
+        selLastRow -= offset;
+    }
+    selClickedRow = std::max(0, selClickedRow - offset);
+    selFirstRow = std::max(0, selFirstRow - offset);
+    updateMultiSelectionRect();
+    emit selectionChanged();
+}
+
+/**
+ * @brief Adjusts the multi line selection rectangle based on chatlog changing lines
+ * @param offset Amount to shift selection rect down by. Must be non-negative.
+  */
+void ChatLog::moveSelectionRectDownIfMulti(int offset)
+{
+    assert(offset >= 0);
+    if (selectionMode != Multi) {
+        return;
+    }
+    const int lastLine = lines.size() - 1;
+    if (selFirstRow + offset > lastLine) { // entire selection now out of bounds
+        clearSelection();
+        return;
+    } else {
+        selFirstRow += offset;
+    }
+    selClickedRow = std::min(lastLine, selClickedRow + offset);
+    selLastRow = std::min(lastLine, selLastRow + offset);
+    updateMultiSelectionRect();
+    emit selectionChanged();
+}
+
+void ChatLog::removeFirsts(const int num)
+{
+    if (lines.size() > num) {
+        lines.erase(lines.begin(), lines.begin()+num);
+        numRemove = num;
+    } else {
+        lines.clear();
+    }
+
+    for (int i = 0; i < lines.size(); ++i) {
+        lines[i]->setRow(i);
+    }
+
+    moveSelectionRectUpIfMulti(num);
+}
+
+void ChatLog::removeLasts(const int num)
+{
+    if (lines.size() > num) {
+        lines.erase(lines.end()-num, lines.end());
+        numRemove = num;
+    } else {
+        lines.clear();
+    }
+}
+
+void ChatLog::setScroll(const bool scroll)
+{
+    isScroll = scroll;
+}
+
+int ChatLog::getNumRemove() const
+{
+    return numRemove;
+}
+
 void ChatLog::forceRelayout()
 {
     startResizeWorker();
 }
 
-void ChatLog::checkVisibility()
+void ChatLog::checkVisibility(bool causedWheelEvent)
 {
-    if (lines.empty())
+    if (lines.empty()) {
         return;
+    }
 
     // find first visible line
     auto lowerBound = std::lower_bound(lines.cbegin(), lines.cend(), getVisibleRect().top(),
@@ -700,6 +850,18 @@ void ChatLog::checkVisibility()
     // if (!visibleLines.empty())
     //  qDebug() << "visible from " << visibleLines.first()->getRow() << "to " <<
     //  visibleLines.last()->getRow() << " total " << visibleLines.size();
+
+    if (!visibleLines.isEmpty()) {
+        emit firstVisibleLineChanged(visibleLines.at(0));
+    }
+
+    if (causedWheelEvent) {
+        if (lowerBound != lines.cend() && lowerBound->get()->row == 0) {
+            emit loadHistoryLower();
+        } else if (upperBound == lines.cend()) {
+            emit loadHistoryUpper();
+        }
+    }
 }
 
 void ChatLog::scrollContentsBy(int dx, int dy)
@@ -750,8 +912,9 @@ void ChatLog::updateTypingNotification()
 
     qreal posY = 0.0;
 
-    if (!lines.empty())
+    if (!lines.empty()) {
         posY = lines.last()->sceneBoundingRect().bottom() + lineSpacing;
+    }
 
     notification->layout(useableWidth(), QPointF(0.0, posY));
 }
@@ -825,10 +988,12 @@ void ChatLog::onWorkerTimeout()
         updateMultiSelectionRect();
 
         // scroll
-        if (workerStb)
+        if (workerStb) {
             scrollToBottom();
-        else
+            workerStb = false;
+        } else {
             scrollToLine(workerAnchorLine);
+        }
 
         // don't keep a Ptr to the anchor line
         workerAnchorLine = ChatLine::Ptr();
@@ -836,6 +1001,7 @@ void ChatLog::onWorkerTimeout()
         // hidden during busy screen
         verticalScrollBar()->show();
 
+        isScroll = true;
         emit workerTimeoutFinished();
     }
 }
@@ -899,6 +1065,16 @@ void ChatLog::focusOutEvent(QFocusEvent* ev)
         for (int i = selFirstRow; i <= selLastRow; ++i)
             lines[i]->selectionFocusChanged(false);
     }
+}
+
+void ChatLog::wheelEvent(QWheelEvent *event)
+{
+    if (!isScroll) {
+        return;
+    }
+
+    QGraphicsView::wheelEvent(event);
+    checkVisibility(true);
 }
 
 void ChatLog::retranslateUi()

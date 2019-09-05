@@ -26,6 +26,7 @@
   - [sqlcipher](#sqlcipher)
   - [Compile toxcore](#compile-toxcore)
   - [Compile qTox](#compile-qtox)
+  - [Security hardening with AppArmor](#security-hardening-with-apparmor)
 - [OS X](#osx)
 - [Windows](#windows)
   - [Cross-compile from Linux](#cross-compile-from-linux)
@@ -38,7 +39,7 @@
 |---------------|-------------|----------------------------------------------------------|
 | [Qt]          | >= 5.5.0    | concurrent, core, gui, network, opengl, svg, widget, xml |
 | [GCC]/[MinGW] | >= 4.8      | C++11 enabled                                            |
-| [toxcore]     | >= 0.2.6    | core, av                                                 |
+| [toxcore]     | >= 0.2.10   | core, av                                                 |
 | [FFmpeg]      | >= 2.6.0    | avformat, avdevice, avcodec, avutil, swscale             |
 | [CMake]       | >= 2.8.11   |                                                          |
 | [OpenAL Soft] | >= 1.16.0   |                                                          |
@@ -46,6 +47,7 @@
 | [sqlcipher]   | >= 3.2.0    |                                                          |
 | [pkg-config]  | >= 0.28     |                                                          |
 | [filteraudio] | >= 0.0.1    | optional dependency                                      |
+| [snorenotify] | >= 0.7.0    | optional dependency                                      |
 
 ## Optional dependencies
 
@@ -116,6 +118,16 @@ Disabled by default.
 
 To enable: `-DENABLE_APPINDICATOR=True`
 
+#### Snorenotify desktop notification backend
+
+Disabled by default
+
+| Name              | Version   |
+|-------------------|-----------|
+| [snorenotify]     | >= 0.7.0  |
+
+To enable: `-DDESKTOP_NOTIFICATIONS=True`
+
 
 ## Linux
 ### Simple install
@@ -143,7 +155,7 @@ pacman -S qtox
 
 #### Fedora
 
-qTox is available in the [RPMFusion](https://rpmfusion.org/) repo, to install:
+qTox is available in the [RPM Fusion](https://rpmfusion.org/) repo, to install:
 
 ```bash
 dnf install qtox
@@ -334,15 +346,12 @@ sudo apt-get install \
 
 #### Fedora
 
-**Note that sqlcipher is not included in all versions of Fedora yet.**
-As of writing this section (November 2016), Fedora 25 ships sqlcipher, but
-Fedora 24 and older don't ship it yet.
-**This means that if you can't install sqlcipher from repositories, you'll
-have to compile it yourself, otherwise compiling qTox will fail.**
+To install FFmpeg, the [RPM Fusion](https://rpmfusion.org/) repo is required.
 
 ```bash
-sudo dnf groupinstall "Development Tools" "C Development Tools and Libraries"
-# (can also use sudo dnf install @"Development Tools")
+sudo dnf group install "Development Tools" "C Development Tools and Libraries"
+# (can also use):
+# sudo dnf install @"Development Tools" @"C Development Tools and Libraries"
 sudo dnf install \
     autoconf \
     automake \
@@ -360,13 +369,13 @@ sudo dnf install \
     openssl-devel \
     opus-devel \
     qrencode-devel \
+    qt5-devel \
     qt5-linguist \
     qt5-qtsvg \
     qt5-qtsvg-devel \
     qt-creator \
-    qt-devel \
     qt-doc \
-    qtsingleapplication \
+    qtsingleapplication-qt5 \
     sqlcipher \
     sqlcipher-devel
 ```
@@ -506,10 +515,14 @@ Provided that you have all required dependencies installed, you can simply run:
 ```bash
 git clone https://github.com/toktok/c-toxcore.git toxcore
 cd toxcore
-git checkout v0.2.7
+git checkout v0.2.10
 cmake .
 make -j$(nproc)
 sudo make install
+
+# we don't know what whether user runs 64 or 32 bits, and on some distros
+# (Fedora, openSUSE) lib/ doesn't link to lib64/, so add both
+echo '/usr/local/lib64/' | sudo tee -a /etc/ld.so.conf.d/locallib.conf
 echo '/usr/local/lib/' | sudo tee -a /etc/ld.so.conf.d/locallib.conf
 sudo ldconfig
 ```
@@ -524,6 +537,9 @@ If you are compiling on Fedora 25, you must add libtoxcore to the
 `PKG_CONFIG_PATH` environment variable manually:
 
 ```
+# we don't know what whether user runs 64 or 32 bits, and on some distros
+# (Fedora, openSUSE) lib/ doesn't link to lib64/, so add both
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib64/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig"
 ```
 
@@ -567,16 +583,21 @@ After installing the required dependencies, run `bootstrap.sh` and then run the
 the packages necessary for building `.deb`s, so be prepared to type your
 password for sudo.
 
+---
+
+### Security hardening with AppArmor
+
+See [AppArmor] to enable confinement for increased security.
+
 
 <a name="osx" />
 
 ## OS X
 
-Supported OS X versions: >=10.8.
+Supported OS X versions: >=10.8. (NOTE: only 10.12 is tested during CI)
 
-Compiling qTox on OS X for development requires 3 tools:
-[Xcode](https://developer.apple.com/xcode/),
-[Qt 5.4+](https://www.qt.io/qt5-4/) and [homebrew](https://brew.sh).
+Compiling qTox on OS X for development requires 2 tools:
+[Xcode](https://developer.apple.com/xcode/) and [homebrew](https://brew.sh).
 
 ### Automated Script
 
@@ -800,6 +821,7 @@ Switches:
     included
 
 
+[AppArmor]: /security/apparmor/README.md
 [Atk]: https://wiki.gnome.org/Accessibility
 [Cairo]: https://www.cairographics.org/
 [Check]: https://libcheck.github.io/check/
@@ -823,3 +845,4 @@ Switches:
 [toxcore]: https://github.com/TokTok/c-toxcore/
 [filteraudio]: https://github.com/irungentoo/filter_audio
 [sonnet]: https://github.com/KDE/sonnet
+[snorenotify]: https://techbase.kde.org/Projects/Snorenotify

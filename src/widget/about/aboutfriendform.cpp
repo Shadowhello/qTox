@@ -1,6 +1,27 @@
+/*
+    Copyright © 2019 by The qTox Project Contributors
+
+    This file is part of qTox, a Qt-based graphical interface for Tox.
+
+    qTox is libre software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    qTox is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with qTox.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 #include "aboutfriendform.h"
+#include "src/widget/gui.h"
 #include "ui_aboutfriendform.h"
 #include "src/core/core.h"
+#include "src/widget/style.h"
 
 #include <QFileDialog>
 #include <QMessageBox>
@@ -25,6 +46,8 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> _about, QWidget* 
     const QString dir = about->getAutoAcceptDir();
     ui->autoacceptfile->setChecked(!dir.isEmpty());
 
+    ui->removeHistory->setEnabled(about->isHistoryExistence());
+
     const int index = static_cast<int>(about->getAutoAcceptCall());
     ui->autoacceptcall->setCurrentIndex(index);
 
@@ -43,6 +66,8 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> _about, QWidget* 
     ui->note->setPlainText(about->getNote());
     ui->statusMessage->setText(about->getStatusMessage());
     ui->avatar->setPixmap(about->getAvatar());
+
+    setStyleSheet(Style::getStylesheet("window/general.css"));
 }
 
 static QString getAutoAcceptDir(const QString& dir)
@@ -105,10 +130,24 @@ void AboutFriendForm::onAcceptedClicked()
 
 void AboutFriendForm::onRemoveHistoryClicked()
 {
-    about->clearHistory();
+   const bool retYes = GUI::askQuestion(tr("Confirmation"),
+                                   tr("Are you sure to remove %1 chat history?").arg(about->getName()),
+                                   /* defaultAns = */ false, /* warning = */ true, /* yesno = */ true);
+    if (!retYes) {
+        return;
+    }
 
-    QMessageBox::information(this, tr("History removed"), tr("Chat history with %1 removed!")
-                             .arg(about->getName().toHtmlEscaped()), QMessageBox::Ok);
+   const bool result = about->clearHistory();
+
+    if (!result) {
+        GUI::showWarning(tr("History removed"),
+                         tr("Failed to remove chat history with %1!").arg(about->getName()).toHtmlEscaped());
+        return;
+    }
+
+    emit histroyRemoved();
+
+    ui->removeHistory->setEnabled(false); // For know clearly to has removed the history
 }
 
 AboutFriendForm::~AboutFriendForm()

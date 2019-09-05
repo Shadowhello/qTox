@@ -1,5 +1,5 @@
 /*
-    Copyright © 2014-2018 by The qTox Project Contributors
+    Copyright © 2014-2019 by The qTox Project Contributors
 
     This file is part of qTox, a Qt-based graphical interface for Tox.
 
@@ -21,17 +21,16 @@
 #include "ui_generalsettings.h"
 
 #include <QFileDialog>
+#include <cmath>
 
 #include "src/core/core.h"
 #include "src/core/coreav.h"
-#include "src/core/recursivesignalblocker.h"
-#include "src/net/autoupdate.h"
-#include "src/nexus.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/persistence/smileypack.h"
 #include "src/widget/form/settingswidget.h"
 #include "src/widget/style.h"
+#include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
 
@@ -65,6 +64,7 @@ static QStringList locales = {
     "pr",
     "pl",
     "pt",
+    "pt_BR",
     "ro",
     "ru",
     "sk",
@@ -100,9 +100,7 @@ GeneralForm::GeneralForm(SettingsWidget* myParent)
 
     Settings& s = Settings::getInstance();
 
-#ifdef AUTOUPDATE_ENABLED
-    bodyUI->checkUpdates->setVisible(AUTOUPDATE_ENABLED);
-#else
+#ifndef UPDATE_CHECK_ENABLED
     bodyUI->checkUpdates->setVisible(false);
 #endif
 
@@ -121,6 +119,8 @@ GeneralForm::GeneralForm(SettingsWidget* myParent)
             langName = QLatin1String("Lojban");
         else if (locales[i].startsWith(QLatin1String("pr")))
             langName = QLatin1String("Pirate");
+        else if (locales[i] == (QLatin1String("pt"))) // QTBUG-47891
+            langName = QStringLiteral("português");
         else
             langName = QLocale(locales[i]).nativeLanguageName();
 
@@ -144,15 +144,15 @@ GeneralForm::GeneralForm(SettingsWidget* myParent)
     bodyUI->closeToTray->setEnabled(showSystemTray);
 
     bodyUI->statusChanges->setChecked(s.getStatusChangeNotificationEnabled());
-    bodyUI->cbFauxOfflineMessaging->setChecked(s.getFauxOfflineMessaging());
 
     bodyUI->autoAwaySpinBox->setValue(s.getAutoAwayTime());
     bodyUI->autoSaveFilesDir->setText(s.getGlobalAutoAcceptDir());
+    bodyUI->maxAutoAcceptSizeMB->setValue(static_cast<double>(s.getMaxAutoAcceptSize()) / 1024 / 1024);
     bodyUI->autoacceptFiles->setChecked(s.getAutoSaveEnabled());
 
+
 #ifndef QTOX_PLATFORM_EXT
-    bodyUI->autoAwayLabel->setEnabled(
-        false); // these don't seem to change the appearance of the widgets,
+    bodyUI->autoAwayLabel->setEnabled(false); // these don't seem to change the appearance of the widgets,
     bodyUI->autoAwaySpinBox->setEnabled(false); // though they are unusable
 #endif
 
@@ -202,7 +202,7 @@ void GeneralForm::on_closeToTray_stateChanged()
 void GeneralForm::on_lightTrayIcon_stateChanged()
 {
     Settings::getInstance().setLightTrayIcon(bodyUI->lightTrayIcon->isChecked());
-    Widget::getInstance()->updateIcons();
+    emit updateIcons();
 }
 
 void GeneralForm::on_minimizeToTray_stateChanged()
@@ -213,11 +213,6 @@ void GeneralForm::on_minimizeToTray_stateChanged()
 void GeneralForm::on_statusChanges_stateChanged()
 {
     Settings::getInstance().setStatusChangeNotificationEnabled(bodyUI->statusChanges->isChecked());
-}
-
-void GeneralForm::on_cbFauxOfflineMessaging_stateChanged()
-{
-    Settings::getInstance().setFauxOfflineMessaging(bodyUI->cbFauxOfflineMessaging->isChecked());
 }
 
 void GeneralForm::on_autoAwaySpinBox_editingFinished()
@@ -243,6 +238,14 @@ void GeneralForm::on_autoSaveFilesDir_clicked()
 
     Settings::getInstance().setGlobalAutoAcceptDir(directory);
     bodyUI->autoSaveFilesDir->setText(directory);
+}
+
+void GeneralForm::on_maxAutoAcceptSizeMB_editingFinished()
+{
+    auto newMaxSizeMB = bodyUI->maxAutoAcceptSizeMB->value();
+    auto newMaxSizeB = std::lround(newMaxSizeMB * 1024 * 1024);
+
+    Settings::getInstance().setMaxAutoAcceptSize(newMaxSizeB);
 }
 
 void GeneralForm::on_checkUpdates_stateChanged()

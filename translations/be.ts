@@ -123,15 +123,6 @@ which may lead to problems with video calls.</source>
         <translation>Аб праграме</translation>
     </message>
     <message>
-        <source>Restart qTox to install version %1</source>
-        <translation>Перазапусціце qTox для ўстаноўкі версіі %1</translation>
-    </message>
-    <message>
-        <source>qTox is downloading update %1</source>
-        <comment>%1 is the version of the update</comment>
-        <translation>qTox запампоўвае абнаўленне %1</translation>
-    </message>
-    <message>
         <source>Original author: %1</source>
         <translation>Першы аўтар: %1</translation>
     </message>
@@ -195,10 +186,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>status message</source>
         <translation>паведамленне аб стане</translation>
-    </message>
-    <message>
-        <source>Public key:</source>
-        <translation>Публічны ключ:</translation>
     </message>
     <message>
         <source>Used aliases:</source>
@@ -269,13 +256,29 @@ which may lead to problems with video calls.</source>
         <translation>Гісторыя выдаленая</translation>
     </message>
     <message>
-        <source>Chat history with %1 removed!</source>
-        <translation>Гісторыя гутарак з %1 выдаленая!</translation>
-    </message>
-    <message>
         <source>Choose an auto accept directory</source>
         <extracomment>popup title</extracomment>
         <translation>Абраць каталог для аўтаматычнага прыёму</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Гэта адкрыты ключ вашага сябра, выкарыстоўвайце яго, каб пацвердзіць яго асобу з дапамогай іншага канала. Вы не можаце адправіць гэта іншым людзям, каб яны маглі дадаць гэты кантакт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Public key (not ToxID):</source>
+        <translation>Публічны ключ (не ToxID):</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation>Пацвярджэнне</translation>
+    </message>
+    <message>
+        <source>Are you sure to remove %1 chat history?</source>
+        <translation>Вы ўпэўнены, што хочаце выдаліць гісторыю чату %1?</translation>
+    </message>
+    <message>
+        <source>Failed to remove chat history with %1!</source>
+        <translation>Не атрымалася выдаліць гісторыю чату %1!</translation>
     </message>
 </context>
 <context>
@@ -283,10 +286,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Version</source>
         <translation>Версія</translation>
-    </message>
-    <message>
-        <source>Downloading update: %p%</source>
-        <translation>Пампаванне абнаўлення: %p%</translation>
     </message>
     <message>
         <source>License</source>
@@ -299,6 +298,18 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Known Issues</source>
         <translation>Вядомая пытанні</translation>
+    </message>
+    <message>
+        <source>Open update download link</source>
+        <translation>Адкрыць спасылку для спампавання абнаўлення</translation>
+    </message>
+    <message>
+        <source>Update available</source>
+        <translation>Абнаўненне даступнае</translation>
+    </message>
+    <message utf8="true">
+        <source>qTox is up to date ✓</source>
+        <translation>qTox абноўлены ✓</translation>
     </message>
 </context>
 <context>
@@ -567,13 +578,13 @@ which may lead to problems with video calls.</source>
         <source>Copy Debug Log</source>
         <translation>Капіяваць журнал адладкі</translation>
     </message>
+    <message>
+        <source>Enable LAN discovery</source>
+        <translation>Уключыць выяўленне LAN</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>
-    <message>
-        <source>Load chat history...</source>
-        <translation>Загрузіць гісторыю чату…</translation>
-    </message>
     <message>
         <source>Send a file</source>
         <translation>Адправіць файл</translation>
@@ -597,10 +608,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Calling %1</source>
         <translation>Выклікаем %1</translation>
-    </message>
-    <message>
-        <source>Failed to send file &quot;%1&quot;</source>
-        <translation>Не атрымалася адправіць файл «%1»</translation>
     </message>
     <message>
         <source>Failed to open temporary file</source>
@@ -633,41 +640,23 @@ which may lead to problems with video calls.</source>
         <translation>Вы спрабуеце адправіць адмысловы (паслядоўны) файл, але гэта не спрацуе!</translation>
     </message>
     <message>
-        <source>away</source>
-        <comment>contact status</comment>
-        <translation>адышоў</translation>
-    </message>
-    <message>
-        <source>busy</source>
-        <comment>contact status</comment>
-        <translation>заняты</translation>
-    </message>
-    <message>
-        <source>offline</source>
-        <comment>contact status</comment>
-        <translation>па-за сеткай</translation>
-    </message>
-    <message>
-        <source>online</source>
-        <comment>contact status</comment>
-        <translation>у сеціве</translation>
-    </message>
-    <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
         <translation>%1 цяпер %2</translation>
     </message>
     <message>
-        <source>Export to file</source>
-        <translation>Экпартаваць у файл</translation>
-    </message>
-    <message>
-        <source>Save chat log</source>
-        <translation>Захаваць журнал чату</translation>
-    </message>
-    <message>
         <source>Call with %1 ended unexpectedly. %2</source>
         <translation>Выклік з %1 нечакана завяршыўся. %2</translation>
+    </message>
+    <message>
+        <source>Filename contained illegal characters</source>
+        <translation>Назва файла змяшчае недапушчальныя сімвалы</translation>
+    </message>
+    <message>
+        <source>Illegal characters have been changed to _ 
+so you can save the file on windows.</source>
+        <translation>Недапушчальныя сімвалы будуць зменены на _,
+так што вы можаце захаваць файл у windows.</translation>
     </message>
 </context>
 <context>
@@ -779,10 +768,6 @@ which may lead to problems with video calls.</source>
 <context>
     <name>Core</name>
     <message>
-        <source>Toxing on qTox</source>
-        <translation>Карыстаю qTox</translation>
-    </message>
-    <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translation>/me прапаноўвае сяброўства, «%1»</translation>
     </message>
@@ -805,6 +790,33 @@ which may lead to problems with video calls.</source>
         <source>Friend is already added</source>
         <comment>Error while sending friendship request</comment>
         <translation>Сябра ўжо даданы</translation>
+    </message>
+    <message>
+        <source>Groupchat %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DesktopNotify</name>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Новае паведамленне</translation>
+    </message>
+    <message>
+        <source>Incoming file transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Friend request received</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New group message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -892,6 +904,11 @@ which may lead to problems with video calls.</source>
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
         <translation>Захаваць файл</translation>
+    </message>
+    <message>
+        <source>Remote Paused</source>
+        <comment>file transfer widget</comment>
+        <translation>Аддалены бок прыпыніўся</translation>
     </message>
 </context>
 <context>
@@ -1053,21 +1070,6 @@ which may lead to problems with video calls.</source>
     </message>
 </context>
 <context>
-    <name>GUI</name>
-    <message>
-        <source>Enter your password</source>
-        <translation>Увядзіце ваш пароль</translation>
-    </message>
-    <message>
-        <source>Decrypt</source>
-        <translation>Расшыфраваць</translation>
-    </message>
-    <message>
-        <source>You must enter a non-empty password:</source>
-        <translation>Вы павінны ўвесці непусты пароль:</translation>
-    </message>
-</context>
-<context>
     <name>GeneralForm</name>
     <message>
         <source>General</source>
@@ -1140,10 +1142,6 @@ instead of system taskbar.</source>
         <translation>Аўтазапуск</translation>
     </message>
     <message>
-        <source>Check for updates on startup</source>
-        <translation>Правяраць абнаўленні пры запуску</translation>
-    </message>
-    <message>
         <source>Set where files will be saved.</source>
         <translation>Усталюйце, дзе будуць захоўвацца файлы.</translation>
     </message>
@@ -1173,18 +1171,6 @@ instead of system taskbar.</source>
         <translation>Паказваць змены стану кантактаў</translation>
     </message>
     <message>
-        <source>On new message:</source>
-        <translation>Пры новым паведамленні:</translation>
-    </message>
-    <message>
-        <source>Play sound</source>
-        <translation>Прайграваць гук</translation>
-    </message>
-    <message>
-        <source>Faux offline messaging</source>
-        <translation>Па-засеткавы абмен паведамленнямі</translation>
-    </message>
-    <message>
         <source>Start qTox on operating system startup (current profile).</source>
         <translation>Запуск qTox падчас запуску аперацыйнай сістэмы (дзейны профіль).</translation>
     </message>
@@ -1193,8 +1179,20 @@ instead of system taskbar.</source>
         <translation>Агаданы каталог для захавання файлаў:</translation>
     </message>
     <message>
-        <source>Play sound while Busy</source>
-        <translation>Прайграваць гук, калі заняты</translation>
+        <source>Check for updates</source>
+        <translation>Праверыць наяўнасць абнаўленняў</translation>
+    </message>
+    <message>
+        <source>Spell checking</source>
+        <translation>Праверка арфаграфіі</translation>
+    </message>
+    <message>
+        <source>Max autoaccept file size (0 to disable):</source>
+        <translation>Максімальны памер файла для аўтапрыёма (0 для адключэння):</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> МБ</translation>
     </message>
 </context>
 <context>
@@ -1224,10 +1222,6 @@ instead of system taskbar.</source>
         <translation>Ачысціць адлюстраваныя паведамленні</translation>
     </message>
     <message>
-        <source>Not sent</source>
-        <translation>Не адпраўлены</translation>
-    </message>
-    <message>
         <source>Cleared</source>
         <translation>Ачышчаны</translation>
     </message>
@@ -1238,6 +1232,30 @@ instead of system taskbar.</source>
     <message>
         <source>Copy link address</source>
         <translation>Капіяваць адрас спасылкі</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation>Пацвярджэнне</translation>
+    </message>
+    <message>
+        <source>You are sure that you want to clear all displayed messages?</source>
+        <translation>Вы ўпэўнены, што хочаце выдаліць усе адлюстраваныя паведамленні?</translation>
+    </message>
+    <message>
+        <source>Search in text</source>
+        <translation>Пошук у тэксце</translation>
+    </message>
+    <message>
+        <source>Go to current date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load chat history...</source>
+        <translation type="unfinished">Загрузіць гісторыю чату…</translation>
+    </message>
+    <message>
+        <source>Export to file</source>
+        <translation type="unfinished">Экпартаваць у файл</translation>
     </message>
 </context>
 <context>
@@ -1254,30 +1272,65 @@ instead of system taskbar.</source>
         <source>Hide Messages</source>
         <translation>Схаваць паведамленні</translation>
     </message>
-</context>
-<context>
-    <name>Group</name>
     <message>
-        <source>&lt;Empty&gt;</source>
-        <comment>Placeholder when someone&apos;s name in a group chat is empty</comment>
-        <translation>&lt;Пустое&gt;</translation>
+        <source>Full Screen</source>
+        <translation>На ўвесь экран</translation>
+    </message>
+    <message>
+        <source>Toggle video preview</source>
+        <translation>Пераключыць папярэдні прагляд відэа</translation>
+    </message>
+    <message>
+        <source>Mute audio</source>
+        <translation>Адключыць аўдыё</translation>
+    </message>
+    <message>
+        <source>Mute microphone</source>
+        <translation>Адключыць мікрафон</translation>
+    </message>
+    <message>
+        <source>End video call</source>
+        <translation>Скончыць відэавыклік</translation>
+    </message>
+    <message>
+        <source>Exit full screen</source>
+        <translation>Выхад з паўнаэкраннага рэжыму</translation>
     </message>
 </context>
 <context>
     <name>GroupChatForm</name>
     <message>
-        <source>1 user in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>1 карыстальнік у чаце</translation>
-    </message>
-    <message>
-        <source>%1 users in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>%1 карыстальніка ў чаце</translation>
-    </message>
-    <message>
         <source>%1 has set the title to %2</source>
         <translation>%1 змяніў загаловак на «%2»</translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
+        <translation>%1 далучыўся да групы</translation>
+    </message>
+    <message>
+        <source>%1 is now known as %2</source>
+        <translation>%1 цяпер вядомы як %2</translation>
+    </message>
+    <message>
+        <source>%1 has left the group</source>
+        <translation>%1 пакінуў групу</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n карыстальнік у чаце</numerusform>
+            <numerusform>%n карыстальнікі ў чаце</numerusform>
+            <numerusform>%n карыстальнікаў у чаце</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>прыглушыць</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>уключаць</translation>
     </message>
 </context>
 <context>
@@ -1313,10 +1366,6 @@ instead of system taskbar.</source>
 <context>
     <name>GroupWidget</name>
     <message>
-        <source>%1 users in chat</source>
-        <translation>%1 карыстальніка ў чаце</translation>
-    </message>
-    <message>
         <source>Set title...</source>
         <translation>Усталяваць назву…</translation>
     </message>
@@ -1333,9 +1382,22 @@ instead of system taskbar.</source>
         <comment>Menu to quit a groupchat</comment>
         <translation>Пакінуць групу</translation>
     </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n карыстальнік у чаце</numerusform>
+            <numerusform>%n карыстальнікі ў чаце</numerusform>
+            <numerusform>%n карыстальнікаў у чаце</numerusform>
+        </translation>
+    </message>
     <message>
-        <source>1 user in chat</source>
-        <translation>1 карыстальнік у чаце</translation>
+        <source>New Message</source>
+        <translation>Новае паведамленне</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>У сеціве</translation>
     </message>
 </context>
 <context>
@@ -1578,12 +1640,28 @@ Profile does not contain your history.</source>
         <translation>Загрузка гісторыі</translation>
     </message>
     <message>
-        <source>Load history from:</source>
-        <translation>Загрузіць гісторыю пачынаючы з:</translation>
+        <source>Load history</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 messages</source>
-        <translation>%1 паведамленняў</translation>
+        <source>from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(about 100 messages are loaded)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Date Dialog</source>
+        <translation type="unfinished">Дыялог выбару даты</translation>
+    </message>
+    <message>
+        <source>Select a date</source>
+        <translation type="unfinished">Выбраць дату</translation>
     </message>
 </context>
 <context>
@@ -1651,12 +1729,6 @@ Please make sure to enter same password twice.</source>
         <translation>Профіль з такой назвай ужо існуе.</translation>
     </message>
     <message>
-        <source>Unknown error: Couldn&apos;t create a new profile.
-If you encountered this error, please report it.</source>
-        <translation>Невядомая памылка: Не атрымалася стварыць новы профіль.
-Калі вы сутыкнуліся з гэтай памылкай, калі ласка, паведаміце пра гэта.</translation>
-    </message>
-    <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translation>Профілі, абароненыя паролем, не могуць быць загружаны аўтаматычна.</translation>
     </message>
@@ -1679,10 +1751,6 @@ You may want to create one.</source>
     <message>
         <source>This profile is already in use.</source>
         <translation>Гэты профіль ужо выкарыстоўваецца.</translation>
-    </message>
-    <message>
-        <source>Profile already in use. Close other clients.</source>
-        <translation>Профіль ужо выкарыстоўваецца. Закрыйце іншыя кліенты.</translation>
     </message>
     <message>
         <source>Wrong password.</source>
@@ -1848,11 +1916,6 @@ You may want to create one.</source>
 <context>
     <name>Nexus</name>
     <message>
-        <source>Images (%1)</source>
-        <comment>filetype filter</comment>
-        <translation>Малюнкі (%1)</translation>
-    </message>
-    <message>
         <source>View</source>
         <comment>OS X Menu bar</comment>
         <translation>Выгляд</translation>
@@ -1981,6 +2044,10 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Couldn&apos;t change password on the database, it might be corrupted or use the old password.</source>
         <translation>Не атрымалася змяніць пароль у базе дадзеных, яна можа быць пашкоджана або выкарыстоўваць стары пароль.</translation>
+    </message>
+    <message>
+        <source>Toxing on qTox</source>
+        <translation>Карыстаю qTox</translation>
     </message>
 </context>
 <context>
@@ -2200,6 +2267,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <extracomment>deletion confirmation text</extracomment>
         <translation>Вы ўпэўненыя, што хочаце выдаліць свой пароль?</translation>
     </message>
+    <message>
+        <source>Images (%1)</source>
+        <comment>filetype filter</comment>
+        <translation>Малюнкі (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ProfileImporter</name>
@@ -2292,21 +2364,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>QObject</name>
-    <message>
-        <source>Version %1, %2</source>
-        <translation>Версія %1, %2</translation>
-    </message>
-    <message>
-        <source>Update</source>
-        <comment>The title of a message box</comment>
-        <translation>Абнавіць</translation>
-    </message>
-    <message>
-        <source>An update is available, do you want to download it now?
-It will be installed when qTox restarts.</source>
-        <translation>Даступна абнаўленне. Вы хочаце загрузіць яго зараз?
-Яно будзе ўсталявана пасля перазапуску qTox.</translation>
-    </message>
     <message>
         <source>Tox URI to parse</source>
         <translation>Tox URI для разбору</translation>
@@ -2422,6 +2479,55 @@ It will be installed when qTox restarts.</source>
         <source>Starts new instance and opens the login screen.</source>
         <translation>Запускае новы экзэмпляр і адкрывае экран уваходу.</translation>
     </message>
+    <message>
+        <source>Dark</source>
+        <translation>Цёмны</translation>
+    </message>
+    <message>
+        <source>Dark blue</source>
+        <translation>Цёмна-сіні</translation>
+    </message>
+    <message>
+        <source>Dark olive</source>
+        <translation>Цёмна-аліўкавы</translation>
+    </message>
+    <message>
+        <source>Dark red</source>
+        <translation>Цёмна-чырвоны</translation>
+    </message>
+    <message>
+        <source>Dark violet</source>
+        <translation>Цёмна-фіялетавы</translation>
+    </message>
+    <message>
+        <source>Failed to load profile automatically.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>online</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">у сеціве</translation>
+    </message>
+    <message>
+        <source>away</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">адышоў</translation>
+    </message>
+    <message>
+        <source>busy</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">заняты</translation>
+    </message>
+    <message>
+        <source>offline</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">па-за сеткай</translation>
+    </message>
+    <message>
+        <source>blocked</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">блакаваны</translation>
+    </message>
 </context>
 <context>
     <name>RemoveFriendDialog</name>
@@ -2472,6 +2578,60 @@ It will be installed when qTox restarts.</source>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translation>Увод</translation>
+    </message>
+</context>
+<context>
+    <name>SearchForm</name>
+    <message>
+        <source>The text could not be found.</source>
+        <translation>Тэкст не можа быць знойдзены.</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Шукаць</translation>
+    </message>
+</context>
+<context>
+    <name>SearchSettingsForm</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Start search:</source>
+        <translation>Пачаць шукаць:</translation>
+    </message>
+    <message>
+        <source>from the end</source>
+        <translation>з канца</translation>
+    </message>
+    <message>
+        <source>from the beginning</source>
+        <translation>з пачатку</translation>
+    </message>
+    <message>
+        <source>after date</source>
+        <translation>пасля даты</translation>
+    </message>
+    <message>
+        <source>before date</source>
+        <translation>да даты</translation>
+    </message>
+    <message>
+        <source>00.00.0000</source>
+        <translation>00.00.0000</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Улічваючы рэгістр</translation>
+    </message>
+    <message>
+        <source>Whole words only</source>
+        <translation>Словы толькі цалкам</translation>
+    </message>
+    <message>
+        <source>Use regular expressions</source>
+        <translation>Ужываць рэгулярны выраз</translation>
     </message>
 </context>
 <context>
@@ -2621,26 +2781,8 @@ It will be installed when qTox restarts.</source>
         <translation>Адкрыць акно</translation>
     </message>
     <message>
-        <source>Focus qTox when you receive message.</source>
-        <comment>toolTip for Focus window setting</comment>
-        <translation>Факусаваць на qTox, калі вы атрымаеце паведамленне.</translation>
-    </message>
-    <message>
-        <source>Focus window</source>
-        <translation>Факусаваць на вакно</translation>
-    </message>
-    <message>
         <source>Contact list</source>
         <translation>Спіс кантактаў</translation>
-    </message>
-    <message>
-        <source>Always notify about new messages in groupchats.</source>
-        <comment>toolTip for Group chat always notify</comment>
-        <translation>Заўсёды апавяшчаць аб новых паведамленнях у групавых чатах.</translation>
-    </message>
-    <message>
-        <source>Group chats always notify</source>
-        <translation>Заўсёды апавяшчаць у групавых чатах</translation>
     </message>
     <message>
         <source>If checked, groupchats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2717,6 +2859,44 @@ It will be installed when qTox restarts.</source>
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translation>Паказваць ідэнтыфікацыйныя выявы замест пустых аватараў</translation>
+    </message>
+    <message>
+        <source>Use colored nicknames in chats</source>
+        <translation>Выкарыстоўваць каляровыя мянушкі ў чатах</translation>
+    </message>
+    <message>
+        <source>Show a notification when you receive a new message and the window is not selected.</source>
+        <comment>tooltip for Notify setting</comment>
+        <translation>Паказваць апавяшчэнне, калі вы атрымалі новае паведамленне і вакно неактыўнае.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Апавясціць</translation>
+    </message>
+    <message>
+        <source>Onlys notify about new messages in groupchats when mentioned.</source>
+        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <translation>Апавяшчаць толькі аб новых паведамленнях у групавых чатах, калі ўзгадваемся.</translation>
+    </message>
+    <message>
+        <source>Group chats only notify when mentioned</source>
+        <translation>Групавыя чаты апавяшчаюцца, толькі калі ўзгадваемся</translation>
+    </message>
+    <message>
+        <source>Play sound</source>
+        <translation>Прайграваць гук</translation>
+    </message>
+    <message>
+        <source>Play sound while Busy</source>
+        <translation>Прайграваць гук, калі заняты</translation>
+    </message>
+    <message>
+        <source>Notify via desktop notifications</source>
+        <translation>Апавяшчаць праз працоўны стол</translation>
+    </message>
+    <message>
+        <source>Hide message sender and contents</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2818,15 +2998,6 @@ It will be installed when qTox restarts.</source>
         <translation>Ваша імя</translation>
     </message>
     <message>
-        <source>Your status</source>
-        <translation>Ваш стан</translation>
-    </message>
-    <message>
-        <source>&lt;Empty&gt;</source>
-        <comment>Placeholder when someone&apos;s name in a group chat is empty</comment>
-        <translation>&lt;Пустое&gt;</translation>
-    </message>
-    <message>
         <source>Message failed to send</source>
         <translation>Не атрымалася адправіць паведамленне</translation>
     </message>
@@ -2920,6 +3091,22 @@ It will be installed when qTox restarts.</source>
         <source>My profile</source>
         <comment>title of the window</comment>
         <translation>Мой профіль</translation>
+    </message>
+    <message>
+        <source>Failed to send file &quot;%1&quot;</source>
+        <translation type="unfinished">Не атрымалася адправіць файл «%1»</translation>
+    </message>
+    <message>
+        <source>File sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> sent you a friend request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> invites you to join a group.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

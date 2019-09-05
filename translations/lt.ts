@@ -123,15 +123,6 @@ vaizdo skambučiais.</translation>
         <translation>Apie</translation>
     </message>
     <message>
-        <source>Restart qTox to install version %1</source>
-        <translation>Paleiskite qTox iš naujo, kad būtų įdiegta versija %1</translation>
-    </message>
-    <message>
-        <source>qTox is downloading update %1</source>
-        <comment>%1 is the version of the update</comment>
-        <translation>qTox atsisiunčia programos atnaujinimą: %1</translation>
-    </message>
-    <message>
         <source>Original author: %1</source>
         <translation>Pradinis autorius: %1</translation>
     </message>
@@ -195,10 +186,6 @@ vaizdo skambučiais.</translation>
     <message>
         <source>status message</source>
         <translation>Būsena</translation>
-    </message>
-    <message>
-        <source>Public key:</source>
-        <translation>Viešasis raktas:</translation>
     </message>
     <message>
         <source>Used aliases:</source>
@@ -269,13 +256,29 @@ vaizdo skambučiais.</translation>
         <translation>Žurnalas išvalytas</translation>
     </message>
     <message>
-        <source>Chat history with %1 removed!</source>
-        <translation>Pokalbių su %1 žurnalas išvalytas!</translation>
-    </message>
-    <message>
         <source>Choose an auto accept directory</source>
         <extracomment>popup title</extracomment>
         <translation>Pasirinkite katalogą automatiniam priėmimui</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tai yra jūsų draugo viešasis raktas, naudokite jį, norėdami patvirtinti draugo tapatybę kitu kanalu. Jūs negalite siųsti šio rakto kitiems asmenims, kad jie pridėtų šį kontaktą.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Public key (not ToxID):</source>
+        <translation>Viešasis raktas (ne ToxID):</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation>Patvirtinimas</translation>
+    </message>
+    <message>
+        <source>Are you sure to remove %1 chat history?</source>
+        <translation>Ar tikrai norite pašalinti pokalbių su %1 žurnalą?</translation>
+    </message>
+    <message>
+        <source>Failed to remove chat history with %1!</source>
+        <translation>Nepavyko pašalinti pokalbių su %1 žurnalo!</translation>
     </message>
 </context>
 <context>
@@ -283,10 +286,6 @@ vaizdo skambučiais.</translation>
     <message>
         <source>Version</source>
         <translation>Versija</translation>
-    </message>
-    <message>
-        <source>Downloading update: %p%</source>
-        <translation>Atsiunčiamas atnaujinimas: %p%</translation>
     </message>
     <message>
         <source>License</source>
@@ -299,6 +298,18 @@ vaizdo skambučiais.</translation>
     <message>
         <source>Known Issues</source>
         <translation>Žinomos klaidos</translation>
+    </message>
+    <message>
+        <source>Open update download link</source>
+        <translation>Atverti atnaujinimo atsisiuntimo nuorodą</translation>
+    </message>
+    <message>
+        <source>Update available</source>
+        <translation>Yra prieinamas atnaujinimas</translation>
+    </message>
+    <message utf8="true">
+        <source>qTox is up to date ✓</source>
+        <translation>qTox yra naujausios versijos ✓</translation>
     </message>
 </context>
 <context>
@@ -567,6 +578,10 @@ vaizdo skambučiais.</translation>
         <source>Copy Debug Log</source>
         <translation>Kopijuoti derinimo žurnalą</translation>
     </message>
+    <message>
+        <source>Enable LAN discovery</source>
+        <translation>Įjungti LAN atradimą</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>
@@ -577,10 +592,6 @@ vaizdo skambučiais.</translation>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
         <translation>qTox nepavyko atverti %1</translation>
-    </message>
-    <message>
-        <source>Load chat history...</source>
-        <translation>Įkelti pokalbių žurnalą...</translation>
     </message>
     <message>
         <source>Unable to open</source>
@@ -597,10 +608,6 @@ vaizdo skambučiais.</translation>
     <message>
         <source>Calling %1</source>
         <translation>Skambiname %1</translation>
-    </message>
-    <message>
-        <source>Failed to send file &quot;%1&quot;</source>
-        <translation>Nepavyko išsiųsti failo „%1“</translation>
     </message>
     <message>
         <source>Failed to open temporary file</source>
@@ -632,41 +639,23 @@ vaizdo skambučiais.</translation>
         <translation>Jūs bandote išsiųsti nuoseklųjį failą, tai suveiks!</translation>
     </message>
     <message>
-        <source>away</source>
-        <comment>contact status</comment>
-        <translation>pasišalinęs (-usi)</translation>
-    </message>
-    <message>
-        <source>busy</source>
-        <comment>contact status</comment>
-        <translation>užsiėmęs (-usi)</translation>
-    </message>
-    <message>
-        <source>offline</source>
-        <comment>contact status</comment>
-        <translation>neprisijungęs (-usi)</translation>
-    </message>
-    <message>
-        <source>online</source>
-        <comment>contact status</comment>
-        <translation>prisijungęs (-usi)</translation>
-    </message>
-    <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
         <translation>%1 dabar %2</translation>
     </message>
     <message>
-        <source>Export to file</source>
-        <translation>Eksportuoti į failą</translation>
-    </message>
-    <message>
-        <source>Save chat log</source>
-        <translation>Įrašyti pokalbio žurnalą</translation>
-    </message>
-    <message>
         <source>Call with %1 ended unexpectedly. %2</source>
         <translation>Skambutis su %1 netikėtai pasibaigė. %2</translation>
+    </message>
+    <message>
+        <source>Filename contained illegal characters</source>
+        <translation>Failo pavadinime buvo neleidžiamų simbolių</translation>
+    </message>
+    <message>
+        <source>Illegal characters have been changed to _ 
+so you can save the file on windows.</source>
+        <translation>Neleidžiami simboliai buvo pakeisti į _
+tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
 </context>
 <context>
@@ -778,10 +767,6 @@ vaizdo skambučiais.</translation>
 <context>
     <name>Core</name>
     <message>
-        <source>Toxing on qTox</source>
-        <translation>Naudoju qTox</translation>
-    </message>
-    <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translation>/me siūlo bendrauti: „%1“</translation>
     </message>
@@ -804,6 +789,33 @@ vaizdo skambučiais.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friendship request</comment>
         <translation>Toks kontaktas jau yra pridėtas</translation>
+    </message>
+    <message>
+        <source>Groupchat %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DesktopNotify</name>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Incoming file transfer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Friend request received</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New group message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -886,6 +898,11 @@ vaizdo skambučiais.</translation>
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
         <translation>Įrašyti failą</translation>
+    </message>
+    <message>
+        <source>Remote Paused</source>
+        <comment>file transfer widget</comment>
+        <translation>Kita šalis pristabdė</translation>
     </message>
 </context>
 <context>
@@ -1046,21 +1063,6 @@ vaizdo skambučiais.</translation>
     </message>
 </context>
 <context>
-    <name>GUI</name>
-    <message>
-        <source>Enter your password</source>
-        <translation>Įveskite slaptažodį</translation>
-    </message>
-    <message>
-        <source>Decrypt</source>
-        <translation>Iššifruoti</translation>
-    </message>
-    <message>
-        <source>You must enter a non-empty password:</source>
-        <translation>Slaptažodis negali būti tuščias:</translation>
-    </message>
-</context>
-<context>
     <name>GeneralForm</name>
     <message>
         <source>General</source>
@@ -1139,10 +1141,6 @@ sistemos juostelėje, o ne programų juostoje.</translation>
         <translation>Paleisti įjungus kompiuterį</translation>
     </message>
     <message>
-        <source>Check for updates on startup</source>
-        <translation>Paleidus ieškoti programos atnaujinimų</translation>
-    </message>
-    <message>
         <source>Set where files will be saved.</source>
         <translation>Nustatykite, kur išsaugoti gautus failus.</translation>
     </message>
@@ -1155,16 +1153,8 @@ sistemos juostelėje, o ne programų juostoje.</translation>
         <translation>Automatiškai „pasišalinęs“ po („0“ išjungia):</translation>
     </message>
     <message>
-        <source>Play sound</source>
-        <translation>Paleisti garso signalą</translation>
-    </message>
-    <message>
         <source>Show contacts&apos; status changes</source>
         <translation>Rodyti kontaktų būsenos pokyčius</translation>
-    </message>
-    <message>
-        <source>Faux offline messaging</source>
-        <translation>Kaupti žinutes atsijungus adresatui</translation>
     </message>
     <message>
         <source>Set to 0 to disable</source>
@@ -1180,16 +1170,24 @@ sistemos juostelėje, o ne programų juostoje.</translation>
         <translation>Automatiškai priimti failus</translation>
     </message>
     <message>
-        <source>On new message:</source>
-        <translation>Gavus žinutę:</translation>
-    </message>
-    <message>
         <source>Default directory to save files:</source>
         <translation>Numatytas katalogas failams išsaugoti:</translation>
     </message>
     <message>
-        <source>Play sound while Busy</source>
-        <translation>Net jei įjungta būsena „Užsiėmęs“</translation>
+        <source>Check for updates</source>
+        <translation>Tikrinti, ar yra atnaujinimų</translation>
+    </message>
+    <message>
+        <source>Spell checking</source>
+        <translation>Rašybos tikrinimas</translation>
+    </message>
+    <message>
+        <source>Max autoaccept file size (0 to disable):</source>
+        <translation>Didžiausio automatiškai priimamo failo dydis (&quot;0&quot; išjungia):</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
     </message>
 </context>
 <context>
@@ -1219,10 +1217,6 @@ sistemos juostelėje, o ne programų juostoje.</translation>
         <translation>Išvalyti rodomas žinutes</translation>
     </message>
     <message>
-        <source>Not sent</source>
-        <translation>Nenusiųsta</translation>
-    </message>
-    <message>
         <source>Cleared</source>
         <translation>Išvalyta</translation>
     </message>
@@ -1233,6 +1227,30 @@ sistemos juostelėje, o ne programų juostoje.</translation>
     <message>
         <source>Copy link address</source>
         <translation>Kopijuoti nuorodos adresą</translation>
+    </message>
+    <message>
+        <source>Confirmation</source>
+        <translation>Patvirtinimas</translation>
+    </message>
+    <message>
+        <source>You are sure that you want to clear all displayed messages?</source>
+        <translation>Ar tikrai norite išvalyti visas rodomas žinutes?</translation>
+    </message>
+    <message>
+        <source>Search in text</source>
+        <translation>Ieškoti tekste</translation>
+    </message>
+    <message>
+        <source>Go to current date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load chat history...</source>
+        <translation type="unfinished">Įkelti pokalbių žurnalą...</translation>
+    </message>
+    <message>
+        <source>Export to file</source>
+        <translation type="unfinished">Eksportuoti į failą</translation>
     </message>
 </context>
 <context>
@@ -1249,30 +1267,65 @@ sistemos juostelėje, o ne programų juostoje.</translation>
         <source>Hide Messages</source>
         <translation>Slėpti žinutes</translation>
     </message>
-</context>
-<context>
-    <name>Group</name>
     <message>
-        <source>&lt;Empty&gt;</source>
-        <comment>Placeholder when someone&apos;s name in a group chat is empty</comment>
-        <translation>&lt;nėra&gt;</translation>
+        <source>Full Screen</source>
+        <translation>Visas ekranas</translation>
+    </message>
+    <message>
+        <source>Toggle video preview</source>
+        <translation>Perjungti vaizdo peržiūrą</translation>
+    </message>
+    <message>
+        <source>Mute audio</source>
+        <translation>Nutildyti garsą</translation>
+    </message>
+    <message>
+        <source>Mute microphone</source>
+        <translation>Nutildyti mikrofoną</translation>
+    </message>
+    <message>
+        <source>End video call</source>
+        <translation>Užbaigti vaizdo skambutį</translation>
+    </message>
+    <message>
+        <source>Exit full screen</source>
+        <translation>Išeiti iš viso ekrano</translation>
     </message>
 </context>
 <context>
     <name>GroupChatForm</name>
     <message>
-        <source>%1 users in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>Pokalbio dalyvių: %1</translation>
-    </message>
-    <message>
-        <source>1 user in chat</source>
-        <comment>Number of users in chat</comment>
-        <translation>Pokalbyje 1 dalyvis</translation>
-    </message>
-    <message>
         <source>%1 has set the title to %2</source>
         <translation>%1 nustatė pavadinimą „%2“</translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
+        <translation>%1 prisijungė prie grupės</translation>
+    </message>
+    <message>
+        <source>%1 is now known as %2</source>
+        <translation>%1 dabar yra žinoma(-s) kaip %2</translation>
+    </message>
+    <message>
+        <source>%1 has left the group</source>
+        <translation>%1 išėjo iš grupės</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>Pokalbyje yra %n naudotojas</numerusform>
+            <numerusform>Pokalbyje yra %n naudotojai</numerusform>
+            <numerusform>Pokalbyje yra %n naudotojų</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>nutildyti</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>įjungti garsą</translation>
     </message>
 </context>
 <context>
@@ -1308,10 +1361,6 @@ sistemos juostelėje, o ne programų juostoje.</translation>
 <context>
     <name>GroupWidget</name>
     <message>
-        <source>%1 users in chat</source>
-        <translation>Pokalbyje %1 žmonių</translation>
-    </message>
-    <message>
         <source>Open chat in new window</source>
         <translation>Atverti pokalbį atskirame lange</translation>
     </message>
@@ -1328,9 +1377,22 @@ sistemos juostelėje, o ne programų juostoje.</translation>
         <comment>Menu to quit a groupchat</comment>
         <translation>Palikti grupės pokalbį</translation>
     </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>Pokalbyje yra %n naudotojas</numerusform>
+            <numerusform>Pokalbyje yra %n naudotojai</numerusform>
+            <numerusform>Pokalbyje yra %n naudotojų</numerusform>
+        </translation>
+    </message>
     <message>
-        <source>1 user in chat</source>
-        <translation>Pokalbyje 1 dalyvis</translation>
+        <source>New Message</source>
+        <translation>Nauja žinutė</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>Prisijungęs(-usi)</translation>
     </message>
 </context>
 <context>
@@ -1573,12 +1635,28 @@ Pokalbių žurnalas nebus išsaugotas.</translation>
         <translation>Įkelti žurnalą</translation>
     </message>
     <message>
-        <source>Load history from:</source>
-        <translation>Įkelti pokalbių žurnalą nuo:</translation>
+        <source>Load history</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 messages</source>
-        <translation>%1 žinučių</translation>
+        <source>from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(about 100 messages are loaded)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Date Dialog</source>
+        <translation type="unfinished">Datos pasirinkimo dialogas</translation>
+    </message>
+    <message>
+        <source>Select a date</source>
+        <translation type="unfinished">Pasirinkti datą</translation>
     </message>
 </context>
 <context>
@@ -1646,12 +1724,6 @@ Please make sure to enter same password twice.</source>
         <translation>Toks profilis jau yra.</translation>
     </message>
     <message>
-        <source>Unknown error: Couldn&apos;t create a new profile.
-If you encountered this error, please report it.</source>
-        <translation>Neatpažinta klaida: nepavyko sukurti profilio.
-Prašome pranešti apie šią klaidą.</translation>
-    </message>
-    <message>
         <source>Couldn&apos;t load profile</source>
         <translation>Nepavyko prisijungti</translation>
     </message>
@@ -1670,10 +1742,6 @@ Galite sukurti naują.</translation>
     <message>
         <source>This profile is already in use.</source>
         <translation>Profilis jau naudojamas.</translation>
-    </message>
-    <message>
-        <source>Profile already in use. Close other clients.</source>
-        <translation>Profilis jau naudojamas. Išjunkite kitas Tox programas.</translation>
     </message>
     <message>
         <source>Wrong password.</source>
@@ -1842,11 +1910,6 @@ Galite sukurti naują.</translation>
 <context>
     <name>Nexus</name>
     <message>
-        <source>Images (%1)</source>
-        <comment>filetype filter</comment>
-        <translation>Vaizdai (%1)</translation>
-    </message>
-    <message>
         <source>View</source>
         <comment>OS X Menu bar</comment>
         <translation>Rodymas</translation>
@@ -1978,6 +2041,10 @@ Failo formatas dar gali pasikeisti, todėl galite prarasti sukauptus duomenis.</
     <message>
         <source>Couldn&apos;t change password on the database, it might be corrupted or use the old password.</source>
         <translation>Nepavyko pakeisti slaptažodžio duomenų bazėje, ji gali būti sugadinta arba gali naudoti seną slaptažodį.</translation>
+    </message>
+    <message>
+        <source>Toxing on qTox</source>
+        <translation>Naudoju qTox</translation>
     </message>
 </context>
 <context>
@@ -2197,6 +2264,11 @@ Norėdami bendrauti, pasidalinkite juo su savo draugais.
         <extracomment>deletion confirmation text</extracomment>
         <translation>Ar tikrai norite panaikinti savo slaptažodį?</translation>
     </message>
+    <message>
+        <source>Images (%1)</source>
+        <comment>filetype filter</comment>
+        <translation>Paveikslai (%1)</translation>
+    </message>
 </context>
 <context>
     <name>ProfileImporter</name>
@@ -2289,21 +2361,6 @@ Norėdami bendrauti, pasidalinkite juo su savo draugais.
 </context>
 <context>
     <name>QObject</name>
-    <message>
-        <source>Version %1, %2</source>
-        <translation>Versija %1 (%2)</translation>
-    </message>
-    <message>
-        <source>Update</source>
-        <comment>The title of a message box</comment>
-        <translation>Atnaujinimas</translation>
-    </message>
-    <message>
-        <source>An update is available, do you want to download it now?
-It will be installed when qTox restarts.</source>
-        <translation>Rasta nauja programos versija, ar norite ją parsisiųsti?
-Ji bus įdiegta paleidus qTox iš naujo.</translation>
-    </message>
     <message>
         <source>Tox URI to parse</source>
         <translation>analizuoti Tox URI</translation>
@@ -2419,6 +2476,55 @@ Ji bus įdiegta paleidus qTox iš naujo.</translation>
         <source>Starts new instance and opens the login screen.</source>
         <translation>Paleidžia naują egzempliorių ir atveria prisijungimo ekraną.</translation>
     </message>
+    <message>
+        <source>Dark</source>
+        <translation>Tamsi</translation>
+    </message>
+    <message>
+        <source>Dark blue</source>
+        <translation>Tamsiai mėlyna</translation>
+    </message>
+    <message>
+        <source>Dark olive</source>
+        <translation>Tamsiai gelsva</translation>
+    </message>
+    <message>
+        <source>Dark red</source>
+        <translation>Tamsiai raudona</translation>
+    </message>
+    <message>
+        <source>Dark violet</source>
+        <translation>Tamsiai violetinė</translation>
+    </message>
+    <message>
+        <source>Failed to load profile automatically.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>online</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">prisijungęs (-usi)</translation>
+    </message>
+    <message>
+        <source>away</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">pasišalinęs (-usi)</translation>
+    </message>
+    <message>
+        <source>busy</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">užsiėmęs (-usi)</translation>
+    </message>
+    <message>
+        <source>offline</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">neprisijungęs (-usi)</translation>
+    </message>
+    <message>
+        <source>blocked</source>
+        <comment>contact status</comment>
+        <translation type="unfinished">užblokuota(-s)</translation>
+    </message>
 </context>
 <context>
     <name>RemoveFriendDialog</name>
@@ -2469,6 +2575,60 @@ Ji bus įdiegta paleidus qTox iš naujo.</translation>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translation>Enter (įvedimo)</translation>
+    </message>
+</context>
+<context>
+    <name>SearchForm</name>
+    <message>
+        <source>The text could not be found.</source>
+        <translation>Nepavyko rasti teksto.</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Pradėti</translation>
+    </message>
+</context>
+<context>
+    <name>SearchSettingsForm</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Start search:</source>
+        <translation>Pradėti paiešką:</translation>
+    </message>
+    <message>
+        <source>from the end</source>
+        <translation>nuo galo</translation>
+    </message>
+    <message>
+        <source>from the beginning</source>
+        <translation>nuo pradžios</translation>
+    </message>
+    <message>
+        <source>after date</source>
+        <translation>po datos</translation>
+    </message>
+    <message>
+        <source>before date</source>
+        <translation>prieš datą</translation>
+    </message>
+    <message>
+        <source>00.00.0000</source>
+        <translation>00.00.0000</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Skirti raidžių dydį</translation>
+    </message>
+    <message>
+        <source>Whole words only</source>
+        <translation>Tik visas žodis</translation>
+    </message>
+    <message>
+        <source>Use regular expressions</source>
+        <translation>Naudoti reguliariuosius reiškinius</translation>
     </message>
 </context>
 <context>
@@ -2618,26 +2778,8 @@ Ji bus įdiegta paleidus qTox iš naujo.</translation>
         <translation>Atverti langą</translation>
     </message>
     <message>
-        <source>Focus qTox when you receive message.</source>
-        <comment>toolTip for Focus window setting</comment>
-        <translation>Sufokusuoti qTox langą, gavus žinutę.</translation>
-    </message>
-    <message>
-        <source>Focus window</source>
-        <translation>Sufokusuoti langą</translation>
-    </message>
-    <message>
         <source>Contact list</source>
         <translation>Kontaktų sąrašas</translation>
-    </message>
-    <message>
-        <source>Always notify about new messages in groupchats.</source>
-        <comment>toolTip for Group chat always notify</comment>
-        <translation>Visada rodyti pranešimus apie naujas žinutes grupių pokalbiuose.</translation>
-    </message>
-    <message>
-        <source>Group chats always notify</source>
-        <translation>Visada pranešti apie grupių pokalbius</translation>
     </message>
     <message>
         <source>If checked, groupchats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2714,6 +2856,44 @@ Ji bus įdiegta paleidus qTox iš naujo.</translation>
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translation>Vietoj tuščių avatarų, naudoti tapatybės piktogramas</translation>
+    </message>
+    <message>
+        <source>Use colored nicknames in chats</source>
+        <translation>Naudoti pokalbiuose spalvotus slapyvardžius</translation>
+    </message>
+    <message>
+        <source>Show a notification when you receive a new message and the window is not selected.</source>
+        <comment>tooltip for Notify setting</comment>
+        <translation>Rodyti pranešimą, kai gaunate naują žinutę, o langas nėra pasirinktas.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Rodyti pranešimus</translation>
+    </message>
+    <message>
+        <source>Onlys notify about new messages in groupchats when mentioned.</source>
+        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <translation>Praneša apie naujas žinutes grupės pokalbiuose tik tuomet, kai kas nors jus paminėjo.</translation>
+    </message>
+    <message>
+        <source>Group chats only notify when mentioned</source>
+        <translation>Rodyti grupės pokalbio pranešimus tik tuomet, kai kas nors paminėjo</translation>
+    </message>
+    <message>
+        <source>Play sound</source>
+        <translation>Groti garsą</translation>
+    </message>
+    <message>
+        <source>Play sound while Busy</source>
+        <translation>Groti garsą, kai įjungta būsena „Užsiėmęs“</translation>
+    </message>
+    <message>
+        <source>Notify via desktop notifications</source>
+        <translation>Pranešti per darbalaukio pranešimus</translation>
+    </message>
+    <message>
+        <source>Hide message sender and contents</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2851,17 +3031,8 @@ Ji bus įdiegta paleidus qTox iš naujo.</translation>
         <translation>Jūsų vardas</translation>
     </message>
     <message>
-        <source>Your status</source>
-        <translation>Jūsų būsena</translation>
-    </message>
-    <message>
         <source>Message failed to send</source>
         <translation>Nepavyko nusiųsti žinutės</translation>
-    </message>
-    <message>
-        <source>&lt;Empty&gt;</source>
-        <comment>Placeholder when someone&apos;s name in a group chat is empty</comment>
-        <translation>&lt;nėra&gt;</translation>
     </message>
     <message>
         <source>Groupchat #%1</source>
@@ -2916,6 +3087,22 @@ Ji bus įdiegta paleidus qTox iš naujo.</translation>
         <source>My profile</source>
         <comment>title of the window</comment>
         <translation>Mano profilis</translation>
+    </message>
+    <message>
+        <source>Failed to send file &quot;%1&quot;</source>
+        <translation type="unfinished">Nepavyko išsiųsti failo „%1“</translation>
+    </message>
+    <message>
+        <source>File sent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> sent you a friend request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> invites you to join a group.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

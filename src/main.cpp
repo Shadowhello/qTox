@@ -1,5 +1,5 @@
 /*
-    Copyright © 2014-2018 by The qTox Project Contributors
+    Copyright © 2014-2019 by The qTox Project Contributors
 
     This file is part of qTox, a Qt-based graphical interface for Tox.
 
@@ -17,12 +17,12 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "persistence/settings.h"
+#include "src/audio/audio.h"
 #include "src/ipc.h"
-#include "src/net/autoupdate.h"
 #include "src/net/toxuri.h"
 #include "src/nexus.h"
 #include "src/persistence/profile.h"
+#include "src/persistence/settings.h"
 #include "src/persistence/toxsave.h"
 #include "src/video/camerasource.h"
 #include "src/widget/loginscreen.h"
@@ -38,6 +38,7 @@
 #include <QMutex>
 #include <QMutexLocker>
 
+#include <QtWidgets/QMessageBox>
 #include <ctime>
 #include <sodium.h>
 #include <stdio.h>
@@ -75,8 +76,10 @@ void cleanup()
 
 #ifdef LOG_TO_FILE
     FILE* f = logFileFile.load();
-    fclose(f);
-    logFileFile.store(nullptr); // atomically disable logging to file
+    if (f != nullptr) {
+        fclose(f);
+        logFileFile.store(nullptr); // atomically disable logging to file
+    }
 #endif
 }
 
@@ -103,6 +106,9 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     switch (type) {
     case QtDebugMsg:
         LogMsg += "Debug";
+        break;
+    case QtInfoMsg:
+        LogMsg += "Info";
         break;
     case QtWarningMsg:
         LogMsg += "Warning";
@@ -173,7 +179,6 @@ int main(int argc, char* argv[])
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     a->setDesktopFileName("io.github.qtox.qTox");
 #endif
-    a->setOrganizationName("Tox");
     a->setApplicationVersion("\nGit commit: " + QString(GIT_VERSION));
 
     // Install Unicode 6.1 supporting font
@@ -191,8 +196,8 @@ int main(int argc, char* argv[])
 #endif
 
     qsrand(time(nullptr));
-    Settings::getInstance();
-    QString locale = Settings::getInstance().getTranslation();
+    Settings& settings = Settings::getInstance();
+    QString locale = settings.getTranslation();
     Translator::translate(locale);
 
     // Process arguments
@@ -210,17 +215,33 @@ int main(int argc, char* argv[])
         QCommandLineOption(QStringList() << "l"
                                          << "login",
                            QObject::tr("Starts new instance and opens the login screen.")));
+    parser.addOption(QCommandLineOption(QStringList() << "I"
+                                                      << "IPv6",
+                                        QObject::tr("Sets IPv6 <on>/<off>. Default is ON."),
+                                        QObject::tr("on/off")));
+    parser.addOption(QCommandLineOption(QStringList() << "U"
+                                                      << "UDP",
+                                        QObject::tr("Sets UDP <on>/<off>. Default is ON."),
+                                        QObject::tr("on/off")));
+    parser.addOption(
+        QCommandLineOption(QStringList() << "L"
+                                         << "LAN",
+                           QObject::tr(
+                               "Sets LAN discovery <on>/<off>. UDP off overrides. Default is ON."),
+                           QObject::tr("on/off")));
+    parser.addOption(QCommandLineOption(QStringList() << "P"
+                                                      << "proxy",
+                                        QObject::tr("Sets proxy settings. Default is NONE."),
+                                        QObject::tr("(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)")));
     parser.process(*a);
 
-    uint32_t profileId = Settings::getInstance().getCurrentProfileId();
+    uint32_t profileId = settings.getCurrentProfileId();
     IPC ipc(profileId);
-    if (!ipc.isAttached()) {
-        qCritical() << "Can't init IPC";
-        return EXIT_FAILURE;
+    if (ipc.isAttached()) {
+        QObject::connect(&settings, &Settings::currentProfileIdChanged, &ipc, &IPC::setProfileId);
+    } else {
+        qWarning() << "Can't init IPC, maybe we're in a jail? Continuing with reduced multi-client functionality.";
     }
-
-    QObject::connect(&Settings::getInstance(), &Settings::currentProfileIdChanged, &ipc,
-                     &IPC::setProfileId);
 
     // For the auto-updater
     if (sodium_init() < 0) {
@@ -229,7 +250,7 @@ int main(int argc, char* argv[])
     }
 
 #ifdef LOG_TO_FILE
-    QString logFileDir = Settings::getInstance().getAppCacheDirPath();
+    QString logFileDir = settings.getAppCacheDirPath();
     QDir(logFileDir).mkpath(".");
 
     QString logfile = logFileDir + "qtox.log";
@@ -270,23 +291,11 @@ int main(int argc, char* argv[])
 
     qDebug() << "commit: " << GIT_VERSION;
 
-
-// Check whether we have an update waiting to be installed
-#ifdef AUTOUPDATE_ENABLED
-    if (AutoUpdater::isLocalUpdateReady())
-        AutoUpdater::installLocalUpdate(); ///< NORETURN
-#endif
-
-
     QString profileName;
-    bool autoLogin = Settings::getInstance().getAutoLogin();
-    // Inter-process communication
-    ipc.registerEventHandler("uri", &toxURIEventHandler);
-    ipc.registerEventHandler("save", &toxSaveEventHandler);
-    ipc.registerEventHandler("activate", &toxActivateEventHandler);
+    bool autoLogin = settings.getAutoLogin();
 
     uint32_t ipcDest = 0;
-    bool doIpc = true;
+    bool doIpc = ipc.isAttached();
     QString eventType, firstParam;
     if (parser.isSet("p")) {
         profileName = parser.value("p");
@@ -303,10 +312,10 @@ int main(int argc, char* argv[])
         doIpc = false;
         autoLogin = false;
     } else {
-        profileName = Settings::getInstance().getCurrentProfile();
+        profileName = settings.getCurrentProfile();
     }
 
-    if (parser.positionalArguments().size() == 0) {
+    if (parser.positionalArguments().empty()) {
         eventType = "activate";
     } else {
         firstParam = parser.positionalArguments()[0];
@@ -339,29 +348,44 @@ int main(int argc, char* argv[])
         }
     }
 
-    Profile* profile = nullptr;
+    if (!Settings::verifyProxySettings(parser)) {
+        return -1;
+    }
+
+    // TODO(sudden6): remove once we get rid of Nexus
+    Nexus& nexus = Nexus::getInstance();
+    // TODO(kriby): Consider moving application initializing variables into a globalSettings object
+    //  note: Because Settings is shouldering global settings as well as model specific ones it
+    //  cannot be integrated into a central model object yet
+    nexus.setSettings(&settings);
 
     // Autologin
+    // TODO (kriby): Shift responsibility of linking views to model objects from nexus
+    // Further: generate view instances separately (loginScreen, mainGUI, audio)
+    Profile* profile = nullptr;
     if (autoLogin && Profile::exists(profileName) && !Profile::isEncrypted(profileName)) {
-        profile = Profile::loadProfile(profileName);
+        profile = Profile::loadProfile(profileName, QString(), settings, &parser);
+        if (!profile) {
+            QMessageBox::information(nullptr, QObject::tr("Error"),
+                                     QObject::tr("Failed to load profile automatically."));
+        }
+    }
+    if (profile) {
+        nexus.bootstrapWithProfile(profile);
     } else {
-        LoginScreen loginScreen{profileName};
-        loginScreen.exec();
-        profile = loginScreen.getProfile();
-        if (profile) {
-            profileName = profile->getName();
+        nexus.setParser(&parser);
+        int returnval = nexus.showLogin(profileName);
+        if (returnval != 0) {
+            return returnval;
         }
     }
 
-    if (!profile) {
-        return EXIT_FAILURE;
+    if (ipc.isAttached()) {
+        // Start to accept Inter-process communication
+        ipc.registerEventHandler("uri", &toxURIEventHandler);
+        ipc.registerEventHandler("save", &toxSaveEventHandler);
+        ipc.registerEventHandler("activate", &toxActivateEventHandler);
     }
-
-    Nexus::getInstance().setProfile(profile);
-    Settings::getInstance().setCurrentProfile(profileName);
-
-    Nexus& nexus = Nexus::getInstance();
-    nexus.start();
 
     // Event was not handled by already running instance therefore we handle it ourselves
     if (eventType == "uri")
@@ -371,10 +395,8 @@ int main(int argc, char* argv[])
 
     QObject::connect(a.get(), &QApplication::aboutToQuit, cleanup);
 
-    // Run (unless we already quit before starting!)
-    int errorcode = 0;
-    if (nexus.isRunning())
-        errorcode = a->exec();
+    // Run
+    int errorcode = a->exec();
 
     qDebug() << "Exit with status" << errorcode;
     return errorcode;
